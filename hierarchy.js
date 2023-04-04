@@ -198,6 +198,7 @@ var hierarchy =
     [ "calendar_config", "classcalendar__config.html", null ],
     [ "camp_reference", "structcamp__reference.html", null ],
     [ "capture_debugmsg", "classcapture__debugmsg.html", null ],
+    [ "cat_order", "structcat__order.html", null ],
     [ "cata_ifstream", "structcata__ifstream.html", null ],
     [ "cata_ofstream", "structcata__ofstream.html", null ],
     [ "cata_tiles", "classcata__tiles.html", null ],
@@ -911,7 +912,8 @@ var hierarchy =
       [ "selection_column_preset", "classselection__column__preset.html", null ],
       [ "weapon_inventory_preset", "classweapon__inventory__preset.html", [
         [ "holster_inventory_preset", "classholster__inventory__preset.html", null ],
-        [ "saw_barrel_inventory_preset", "classsaw__barrel__inventory__preset.html", null ]
+        [ "saw_barrel_inventory_preset", "classsaw__barrel__inventory__preset.html", null ],
+        [ "saw_stock_inventory_preset", "classsaw__stock__inventory__preset.html", null ]
       ] ]
     ] ],
     [ "invlet_favorites", "classinvlet__favorites.html", null ],
@@ -1025,6 +1027,7 @@ var hierarchy =
       [ "reveal_map_actor", "classreveal__map__actor.html", null ],
       [ "salvage_actor", "classsalvage__actor.html", null ],
       [ "saw_barrel_actor", "classsaw__barrel__actor.html", null ],
+      [ "saw_stock_actor", "classsaw__stock__actor.html", null ],
       [ "sew_advanced_actor", "classsew__advanced__actor.html", null ],
       [ "unfold_vehicle_iuse", "classunfold__vehicle__iuse.html", null ],
       [ "unpack_actor", "classunpack__actor.html", null ],
@@ -1636,6 +1639,7 @@ var hierarchy =
     [ "string_id< VehicleGroup >", "classstring__id.html", null ],
     [ "string_id< vitamin >", "classstring__id.html", null ],
     [ "string_id< vpart_info >", "classstring__id.html", null ],
+    [ "string_id< weapon_category >", "classstring__id.html", null ],
     [ "string_id< weather_type >", "classstring__id.html", null ],
     [ "string_id< zone_type >", "classstring__id.html", null ],
     [ "string_id_params< T >", "structstring__id__params.html", null ],
@@ -1859,6 +1863,7 @@ var hierarchy =
     [ "washing_requirements", "structwashing__requirements.html", null ],
     [ "watcher_set< Watcher >", "classwatcher__set.html", null ],
     [ "Creature_tracker::weak_ptr_comparator", "classCreature__tracker_1_1weak__ptr__comparator.html", null ],
+    [ "weapon_category", "classweapon__category.html", null ],
     [ "weather_animation_t", "structweather__animation__t.html", null ],
     [ "weather_gen_common", "structweather__gen__common.html", null ],
     [ "weather_generator", "classweather__generator.html", null ],
