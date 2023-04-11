@@ -608,9 +608,6 @@ var hierarchy =
     ] ],
     [ "event_transformation", "classevent__transformation.html", null ],
     [ "std::exception", null, [
-      [ "std::logic_error", null, [
-        [ "cata::bad_optional_access", "classcata_1_1bad__optional__access.html", null ]
-      ] ],
       [ "std::runtime_error", null, [
         [ "JsonError", "classJsonError.html", null ],
         [ "format_error", "classformat__error.html", null ],
@@ -848,7 +845,6 @@ var hierarchy =
     ] ],
     [ "cata::tuple_hash_detail::Impl< Tuple, 0 >", "structcata_1_1tuple__hash__detail_1_1Impl_3_01Tuple_00_010_01_4.html", null ],
     [ "pointmenu_cb::impl_t", "structpointmenu__cb_1_1impl__t.html", null ],
-    [ "cata::in_place_t", "structcata_1_1in__place__t.html", null ],
     [ "json_item_substitution::substitution::info", "structjson__item__substitution_1_1substitution_1_1info.html", null ],
     [ "input_context", "classinput__context.html", null ],
     [ "input_event", "structinput__event.html", null ],
@@ -1310,7 +1306,6 @@ var hierarchy =
     [ "npc_template", "classnpc__template.html", null ],
     [ "detail::null< T >", "structdetail_1_1null.html", null ],
     [ "null_deleter", "structnull__deleter.html", null ],
-    [ "cata::nullopt_t", "structcata_1_1nullopt__t.html", null ],
     [ "number_sci_notation", "structnumber__sci__notation.html", null ],
     [ "numeric_interval< T, typename >", "structnumeric__interval.html", null ],
     [ "detail::numeric_specs_checker< ErrorHandler >", "classdetail_1_1numeric__specs__checker.html", null ],
@@ -1331,8 +1326,7 @@ var hierarchy =
     [ "omt_route_params", "structomt__route__params.html", null ],
     [ "pf::omt_score", "structpf_1_1omt__score.html", null ],
     [ "on_out_of_scope", "classon__out__of__scope.html", null ],
-    [ "cata::optional< T >", "classcata_1_1optional.html", null ],
-    [ "cata::optional< vpart_position >", "classcata_1_1optional.html", [
+    [ "std::optional", null, [
       [ "optional_vpart_position", "classoptional__vpart__position.html", null ]
     ] ],
     [ "options_manager", "classoptions__manager.html", null ],
@@ -1697,6 +1691,7 @@ var hierarchy =
     [ "transform_terrain_data", "structtransform__terrain__data.html", null ],
     [ "translatable_mod_info", "structtranslatable__mod__info.html", null ],
     [ "translation", "classtranslation.html", null ],
+    [ "transparency_exp_lookup< n >", "structtransparency__exp__lookup.html", null ],
     [ "cata::transparent_less_than", "structcata_1_1transparent__less__than.html", [
       [ "cata::flat_set< std::string >", "classcata_1_1flat__set.html", null ],
       [ "cata::flat_set< T, Compare, Data >", "classcata_1_1flat__set.html", null ]
@@ -1713,11 +1708,11 @@ var hierarchy =
       [ "detail::is_integral< int128_t >", "structdetail_1_1is__integral_3_01int128__t_01_4.html", null ],
       [ "detail::is_integral< uint128_t >", "structdetail_1_1is__integral_3_01uint128__t_01_4.html", null ],
       [ "detail::is_named_arg< named_arg< Char, T > >", "structdetail_1_1is__named__arg_3_01named__arg_3_01Char_00_01T_01_4_01_4.html", null ],
-      [ "detail::is_optional_helper< cata::optional< T > >", "classdetail_1_1is__optional__helper_3_01cata_1_1optional_3_01T_01_4_01_4.html", null ],
+      [ "detail::is_optional_helper< std::optional< T > >", "classdetail_1_1is__optional__helper_3_01std_1_1optional_3_01T_01_4_01_4.html", null ],
       [ "detail::is_output_iterator< It, T, void_t< typename std::iterator_traits< It >::iterator_category, decltype(*std::declval< It >()=std::declval< T >()) > >", "structdetail_1_1is__output__iterator_3_01It_00_01T_00_01void__t_3_01typename_01std_1_1iterator__c6c92fb2cbbf10ce92436c9976fda4bf.html", null ],
       [ "detail::is_reference_wrapper< std::reference_wrapper< T > >", "structdetail_1_1is__reference__wrapper_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html", null ],
       [ "has_enum_traits< E, enum_traits_detail::last_type< E > >", "structhas__enum__traits_3_01E_00_01enum__traits__detail_1_1last__type_3_01E_01_4_01_4.html", null ],
-      [ "has_src_member< T, cata::void_t< decltype(std::declval< T & >().src.emplace_back(std::declval< T & >().id, mod_id()))> >", "structhas__src__member_3_01T_00_01cata_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_6_01_4_4e4a02a40440211e97410229b7faa76f.html", null ],
+      [ "has_src_member< T, std::void_t< decltype(std::declval< T & >().src.emplace_back(std::declval< T & >().id, mod_id()))> >", "structhas__src__member_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_6_01_4_008f265368982ec699844890d5cd1ff0d.html", null ],
       [ "io::detail::has_archive_tag< T, typename enable_if_type< typename T::archive_type_tag >::type >", "structio_1_1detail_1_1has__archive__tag_3_01T_00_01typename_01enable__if__type_3_01typename_01T_f020189a2c34814894bce8b62ed27d09.html", null ],
       [ "is_char< char >", "structis__char_3_01char_01_4.html", null ],
       [ "is_char< char16_t >", "structis__char_3_01char16__t_01_4.html", null ],
@@ -1728,8 +1723,8 @@ var hierarchy =
       [ "is_contiguous< std::basic_string< Char > >", "structis__contiguous_3_01std_1_1basic__string_3_01Char_01_4_01_4.html", null ],
       [ "is_pimpl_helper< pimpl< T > >", "classis__pimpl__helper_3_01pimpl_3_01T_01_4_01_4.html", null ],
       [ "is_std_array_helper< std::array< T, N > >", "classis__std__array__helper_3_01std_1_1array_3_01T_00_01N_01_4_01_4.html", null ],
-      [ "supports_proportional< T, cata::void_t< decltype(std::declval< T & >() *=std::declval< float >())> >", "structsupports__proportional_3_01T_00_01cata_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_65a900226014ad1185c6b766ea4e24245.html", null ],
-      [ "supports_relative< T, cata::void_t< decltype(std::declval< T & >()+=std::declval< T & >())> >", "structsupports__relative_3_01T_00_01cata_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_6_01_50ce8d93c8242fc4603fa58eb9774b45.html", null ]
+      [ "supports_proportional< T, std::void_t< decltype(std::declval< T & >() *=std::declval< float >())> >", "structsupports__proportional_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_6_feffb41c6ab1ef1da38e3c6e8b927d83.html", null ],
+      [ "supports_relative< T, std::void_t< decltype(std::declval< T & >()+=std::declval< T & >())> >", "structsupports__relative_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_6_01_49ed6ff7dcf760d5705b050c877ee4fe5.html", null ]
     ] ],
     [ "detail::truncating_iterator< OutputIt, Enable >", "classdetail_1_1truncating__iterator.html", null ],
     [ "detail::truncating_iterator_base< OutputIt >", "classdetail_1_1truncating__iterator__base.html", [
@@ -1758,6 +1753,7 @@ var hierarchy =
       [ "overmap_ui::map_notes_callback", "classovermap__ui_1_1map__notes__callback.html", null ],
       [ "pointmenu_cb", "classpointmenu__cb.html", null ],
       [ "query_destination_callback", "classquery__destination__callback.html", null ],
+      [ "sound_on_move_uilist_callback", "classsound__on__move__uilist__callback.html", null ],
       [ "spellbook_callback", "classspellbook__callback.html", null ],
       [ "spellcasting_callback", "classspellcasting__callback.html", null ],
       [ "teleporter_callback", "classteleporter__callback.html", null ],
