@@ -1,5 +1,15 @@
 var NAVTREEINDEX63 =
 {
+"classsalvage__actor.html#a01d48126dcc9f6c0deb04648b19c1df0":[36,0,815,4],
+"classsalvage__actor.html#a2d5d64781c544d4ff5661dc66bf493f3":[36,0,815,10],
+"classsalvage__actor.html#a3d06ff24610e5c47eded5e720c9d1158":[36,0,815,1],
+"classsalvage__actor.html#a3d9103b90123acad89eeaccf7d0b91d4":[36,0,815,6],
+"classsalvage__actor.html#a575d0c63ae2f6df2b177665fa867d978":[36,0,815,8],
+"classsalvage__actor.html#a96dbf666210c49e029983545aba0a7e9":[36,0,815,2],
+"classsalvage__actor.html#a9cb564780f13adda98edd991a333e4c2":[36,0,815,0],
+"classsalvage__actor.html#aa8eb7e595135599298a4c1ebc4e70721":[36,0,815,7],
+"classsalvage__actor.html#ac23af305524b36576890df86e9b64d17":[36,0,815,3],
+"classsalvage__actor.html#acc238969ca63682b43627cd3f7157147":[36,0,815,5],
 "classsalvage__actor.html#ae8a6f9f163272ff72bf6b29e27c96d7a":[36,0,815,9],
 "classsalvage__inventory__preset.html":[36,0,816],
 "classsalvage__inventory__preset.html#a40daa2d33561e6c4c26305276362982a":[36,0,816,2],
@@ -239,15 +249,5 @@ var NAVTREEINDEX63 =
 "classselection__column__preset.html":[36,0,835],
 "classselection__column__preset.html#a17f3ceb0cd97c8752cd1f17669782b0f":[36,0,835,2],
 "classselection__column__preset.html#a7760e085c2daf9455643925a83ce481e":[36,0,835,0],
-"classselection__column__preset.html#ae6e8b2158a7097f9944163e1e0614915":[36,0,835,1],
-"classset__transform__iuse.html":[36,0,836],
-"classset__transform__iuse.html#a04005401e8fe6ff7ef0dd364a81157d1":[36,0,836,4],
-"classset__transform__iuse.html#a0a78cce5f10d912a9acffdc8afd842c0":[36,0,836,1],
-"classset__transform__iuse.html#a0ff0360221b73540df1fca33196b96ac":[36,0,836,5],
-"classset__transform__iuse.html#a14a8a5a3ffd2e16d18d65f8b21f0bbd7":[36,0,836,6],
-"classset__transform__iuse.html#a48fee4e33273842edff2a418914c6a6b":[36,0,836,2],
-"classset__transform__iuse.html#a839e0ad52707bf25bc75f67d1ed2d21f":[36,0,836,7],
-"classset__transform__iuse.html#a876a195e9deaca46e53b70f4164dfbca":[36,0,836,8],
-"classset__transform__iuse.html#aa927f36f3687276cfcba90ccb4354bcc":[36,0,836,0],
-"classset__transform__iuse.html#aed5f9b43988073cf2986372c6147b60a":[36,0,836,3]
+"classselection__column__preset.html#ae6e8b2158a7097f9944163e1e0614915":[36,0,835,1]
 };

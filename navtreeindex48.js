@@ -1,5 +1,15 @@
 var NAVTREEINDEX48 =
 {
+"classjmapgen__nested.html#adefa1fc7df75f693fe57e378f31cb373":[36,0,510,2],
+"classjmapgen__nested.html#ae04830ca4bea90b3790f893eec1a5816":[36,0,510,1],
+"classjmapgen__nested.html#ae68175a6901219d195256ed782c33d64":[36,0,510,3],
+"classjmapgen__nested_1_1neighborhood__check.html":[36,0,510,0],
+"classjmapgen__nested_1_1neighborhood__check.html#a5492798e3ea53082ff4ca247d3760bca":[36,0,510,0,3],
+"classjmapgen__nested_1_1neighborhood__check.html#a698491416970fe0f187857e1925f8c31":[36,0,510,0,4],
+"classjmapgen__nested_1_1neighborhood__check.html#ab2175e1cfa340eb354825ece24d1180b":[36,0,510,0,1],
+"classjmapgen__nested_1_1neighborhood__check.html#adf374b8676171ef9f70e3aa27acb59db":[36,0,510,0,0],
+"classjmapgen__nested_1_1neighborhood__check.html#aec1c5d01f43bd8cfe71d034afc847250":[36,0,510,0,2],
+"classjmapgen__npc.html":[36,0,511],
 "classjmapgen__npc.html#a58bf6ce68d1627369f316dbef3833adf":[36,0,511,2],
 "classjmapgen__npc.html#aa7b489df4ecc3658dfba7b58175344c3":[36,0,511,1],
 "classjmapgen__npc.html#aa85eae06a7dd49022e1758494b99e637":[36,0,511,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX48 =
 "classleap__actor.html#ae29a5fc964d37f04c028906cafbde142":[36,0,556,7],
 "classleap__actor.html#ae89ac3de9f1390481830c2ad110720f9":[36,0,556,0],
 "classlearn__spell__actor.html":[36,0,557],
-"classlearn__spell__actor.html#a0764c2c8417ebaf1f1f9a8c068e4050b":[36,0,557,4],
-"classlearn__spell__actor.html#a25721a2c9e023087537b1f6b3026deb4":[36,0,557,6],
-"classlearn__spell__actor.html#a9874958cd0307f3553bbedfed3c2436e":[36,0,557,2],
-"classlearn__spell__actor.html#ab6b4522a3ef43bbe0ce35d47b0988887":[36,0,557,0],
-"classlearn__spell__actor.html#ae62714231215ddae24903fa17f4ec570":[36,0,557,1],
-"classlearn__spell__actor.html#aefe387c5eff2be27b39f8996e2e6fad4":[36,0,557,3],
-"classlearn__spell__actor.html#af3268f343134dfbfcd3e398c0fba712f":[36,0,557,5],
-"classlightson__game.html":[36,0,561],
-"classlightson__game.html#a0ae693de1088e51f61e71678db0f0b46":[36,0,561,13],
-"classlightson__game.html#a0cc0c1dfd8fad29dd870a47fc149fde4":[36,0,561,15],
-"classlightson__game.html#a11a1d05b52e6ce295cdb5c65cff77406":[36,0,561,2]
+"classlearn__spell__actor.html#a0764c2c8417ebaf1f1f9a8c068e4050b":[36,0,557,4]
 };
