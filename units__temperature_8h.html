@@ -162,6 +162,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad411ed31e83404311ef27bdcb7e31260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdd80a8c9fd2cf0001a3242e6cc223e3"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">units::temperature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="units__temperature_8h.html#acdd80a8c9fd2cf0001a3242e6cc223e3">operator&quot;&quot;_c</a> (const unsigned long long v)</td></tr>
 <tr class="separator:acdd80a8c9fd2cf0001a3242e6cc223e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8001314f231c36010144b84ab404e1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">units::temperature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="units__temperature_8h.html#a1d8001314f231c36010144b84ab404e1">operator&quot;&quot;_c</a> (const long double v)</td></tr>
+<tr class="separator:a1d8001314f231c36010144b84ab404e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb85a88f145d3dbe26d1818b528612b9"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">units::temperature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="units__temperature_8h.html#aeb85a88f145d3dbe26d1818b528612b9">operator&quot;&quot;_f</a> (const unsigned long long v)</td></tr>
 <tr class="separator:aeb85a88f145d3dbe26d1818b528612b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -190,8 +192,39 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a1d8001314f231c36010144b84ab404e1" name="a1d8001314f231c36010144b84ab404e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8001314f231c36010144b84ab404e1">&#9670;&nbsp;</a></span>operator&quot;&quot;_c() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">units::temperature</a> operator&quot;&quot;_c </td>
+          <td>(</td>
+          <td class="paramtype">const long double&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="units__temperature_8h_source.html#l00151">151</a> of file <a class="el" href="units__temperature_8h_source.html">units_temperature.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>{</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">return</span> units::from_celsius&lt;double&gt;( <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>( v ) );</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="acdd80a8c9fd2cf0001a3242e6cc223e3" name="acdd80a8c9fd2cf0001a3242e6cc223e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdd80a8c9fd2cf0001a3242e6cc223e3">&#9670;&nbsp;</a></span>operator&quot;&quot;_c()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd80a8c9fd2cf0001a3242e6cc223e3">&#9670;&nbsp;</a></span>operator&quot;&quot;_c() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,10 +278,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="units__temperature_8h_source.html#l00151">151</a> of file <a class="el" href="units__temperature_8h_source.html">units_temperature.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>{</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">return</span> units::from_fahrenheit&lt;int&gt;( v );</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
+<p class="definition">Definition at line <a class="el" href="units__temperature_8h_source.html#l00156">156</a> of file <a class="el" href="units__temperature_8h_source.html">units_temperature.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>{</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> units::from_fahrenheit&lt;int&gt;( v );</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -291,7 +324,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="units__temperature_8h.html">units_temperature.h</a></li>
-    <li class="footer">Generated on Thu Sep 21 2023 00:10:55 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 22:58:48 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

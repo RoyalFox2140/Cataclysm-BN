@@ -9,7 +9,7 @@ var weather_8h =
     [ "current_weather", "group__Weather.html#ga275631a4069758bffeb8d4fad0cb5919", null ],
     [ "funnel_charges_per_turn", "group__Weather.html#ga5e6b69c07a1700d9cbbb5e666762b72c", null ],
     [ "get_dirstring", "group__Weather.html#ga91e01ef6a71f6495015d3a14131952f2", null ],
-    [ "get_hourly_rotpoints_at_temp", "weather_8h.html#ac1512b4bd68001e9bd493da8fdf1271a", null ],
+    [ "get_hourly_rotpoints_at_temp", "weather_8h.html#ad65bf6c7483f26579a73b5a9d94329b8", null ],
     [ "get_local_humidity", "group__Weather.html#ga3b6c37e7f8086254c46acb9572ea97d1", null ],
     [ "get_local_windchill", "group__Weather.html#gaf98633acdf9d77e758eab4af90a6a30c", null ],
     [ "get_local_windpower", "group__Weather.html#ga23304505d04b612b77e4df5e9b64a1dd", null ],

@@ -1,12 +1,5 @@
 var NAVTREEINDEX98 =
 {
-"iuse__actor_8cpp.html#a17e20a34f5837e50de3264fa93af7d0a":[37,0,1,335,52],
-"iuse__actor_8cpp.html#a1a83704531ed46dc0d0530f41377c227":[37,0,1,335,8],
-"iuse__actor_8cpp.html#a1c07be3a760c8f593258e8c0da77fbfe":[37,0,1,335,19],
-"iuse__actor_8cpp.html#a1de43fa1f6d16ce87ab7a3a49e47c463":[37,0,1,335,31],
-"iuse__actor_8cpp.html#a24886ecb2b3812c98899a8ceaf5d29fa":[37,0,1,335,35],
-"iuse__actor_8cpp.html#a26ecdac9a64be27edf58e27505e8548b":[37,0,1,335,38],
-"iuse__actor_8cpp.html#a2a1b60111a7bbffa1b9cffe54cbcf2da":[37,0,1,335,5],
 "iuse__actor_8cpp.html#a2d866d9790623dc33511f3f08ec510b5":[37,0,1,335,64],
 "iuse__actor_8cpp.html#a2d87fd497d36d3b6b4c389a34059eb89":[37,0,1,335,41],
 "iuse__actor_8cpp.html#a2dde49329eef942ec57d25db274942c0":[37,0,1,335,25],
@@ -249,5 +242,12 @@ var NAVTREEINDEX98 =
 "lightmap_8h_source.html":[37,0,1,359],
 "line_8cpp.html":[37,0,1,360],
 "line_8cpp.html#a0151dde82359c5892f138e92ee2ab697":[37,0,1,360,13],
-"line_8cpp.html#a076e8e25b7abb827c8294059b2454dad":[37,0,1,360,19]
+"line_8cpp.html#a076e8e25b7abb827c8294059b2454dad":[37,0,1,360,19],
+"line_8cpp.html#a0e0927f95ba9200b418d74aeff48f7a3":[37,0,1,360,8],
+"line_8cpp.html#a10ff7fb33381e8938b0bb524b6aa5850":[37,0,1,360,7],
+"line_8cpp.html#a19634ed59e09da9312d6fa110a38539c":[37,0,1,360,10],
+"line_8cpp.html#a1a892ef073bda14e92be0d545d2e406b":[37,0,1,360,27],
+"line_8cpp.html#a1cd8ba343b3d636459366cbf8cc81ab6":[37,0,1,360,2],
+"line_8cpp.html#a22f984836636053038f43340f9c50149":[37,0,1,360,5],
+"line_8cpp.html#a2d906c9af0b0586f48bc34cff0838817":[37,0,1,360,24]
 };

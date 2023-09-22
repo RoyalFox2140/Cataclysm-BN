@@ -158,7 +158,9 @@ var namespaces_dup =
     [ "anonymous_namespace{iexamine.cpp}", "namespaceanonymous__namespace_02iexamine_8cpp_03.html", "namespaceanonymous__namespace_02iexamine_8cpp_03" ],
     [ "anonymous_namespace{iexamine_elevator.cpp}", "namespaceanonymous__namespace_02iexamine__elevator_8cpp_03.html", "namespaceanonymous__namespace_02iexamine__elevator_8cpp_03" ],
     [ "anonymous_namespace{item.cpp}", "namespaceanonymous__namespace_02item_8cpp_03.html", [
-      [ "get_clothing_mod_val_key", "namespaceanonymous__namespace_02item_8cpp_03.html#a4344f62919abf9934b6abe5a7cffbe3e", null ]
+      [ "get_clothing_mod_val_key", "namespaceanonymous__namespace_02item_8cpp_03.html#a4344f62919abf9934b6abe5a7cffbe3e", null ],
+      [ "temperature_flag_to_highest_temperature", "namespaceanonymous__namespace_02item_8cpp_03.html#aa5df3752ba211d1cd7875a0ebb378520", null ],
+      [ "rot_chart", "namespaceanonymous__namespace_02item_8cpp_03.html#acbea1abc7fc89a159901508b9e505ed3", null ]
     ] ],
     [ "anonymous_namespace{item_category.cpp}", "namespaceanonymous__namespace_02item__category_8cpp_03.html", [
       [ "item_category_factory", "namespaceanonymous__namespace_02item__category_8cpp_03.html#af08a772fbabbbc0c65e9f8f29b163d2e", null ]
@@ -1825,6 +1827,7 @@ var namespaces_dup =
       [ "teleport", "namespaceteleport.html#a24cbf298b41e9fc23770c73d32e33a47", null ]
     ] ],
     [ "temperatures", "namespacetemperatures.html", [
+      [ "annual_average", "namespacetemperatures.html#a6c31d19808e2fb2ffe4fb2f72dee9923", null ],
       [ "cold", "namespacetemperatures.html#a6a0e3903fa0a749ee4c45d95eb6016d2", null ],
       [ "freezer", "namespacetemperatures.html#ab5323589e14984e5c09cafa3b62def7d", null ],
       [ "freezing", "namespacetemperatures.html#a6fe2961d424ef5406871b8ee32764330", null ],

@@ -266,258 +266,261 @@ $(document).ready(function(){initNavTree('catalua_8cpp_source.html',''); initRes
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a6b228f90a4bc8d8eb9b3421e8e8e5677">debug_write_lua_backtrace</a>( std::ostream &amp;out )</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>{</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_struct" href="structcata_1_1lua__state.html">cata::lua_state</a> &amp;state = *<a class="code hl_function" href="classDynamicDataLoader.html#adca1972b6d79ffd55d6d7ca1a0c329b9">DynamicDataLoader::get_instance</a>().<a class="code hl_variable" href="classDynamicDataLoader.html#aacb35b3527920adc4e56166a4d8f730a">lua</a>;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    sol::state container;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    luaL_traceback( container.lua_state(), state.<a class="code hl_variable" href="structcata_1_1lua__state.html#ae788c64f8d334f74709643b48aff4221">lua</a>.lua_state(), <span class="stringliteral">&quot;=== Lua backtrace report ===&quot;</span>, 0 );</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    std::string data = sol::stack::pop&lt;std::string&gt;( container );</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    out &lt;&lt; data &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keyword">static</span> sol::table get_mod_storage_table( lua_state &amp;state )</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>{</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">return</span> state.lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;cata_internal&quot;</span>][<span class="stringliteral">&quot;mod_storage&quot;</span>];</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacecata.html#a5fd938dc35f909bb49681c496c4fba74">save_world_lua_state</a>( <span class="keyword">const</span> std::string &amp;path )</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>{</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    lua_state &amp;state = *<a class="code hl_function" href="classDynamicDataLoader.html#adca1972b6d79ffd55d6d7ca1a0c329b9">DynamicDataLoader::get_instance</a>().<a class="code hl_variable" href="classDynamicDataLoader.html#aacb35b3527920adc4e56166a4d8f730a">lua</a>;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemod__management.html#a2b453b753864424a211ee499133505ed">mod_management::t_mod_list</a> &amp;mods = <a class="code hl_variable" href="worldfactory_8cpp.html#a565015a7cbda226682041968982faa57">world_generator</a>-&gt;active_world-&gt;active_mod_order;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    sol::table t = get_mod_storage_table( state );</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <a class="code hl_function" href="namespacecata.html#aa161600db431774cdc9071771793bb21">run_on_game_save_hooks</a>( state );</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a> = <a class="code hl_function" href="cata__utility_8cpp.html#a622c5bbf103e24e414fea34574eb68a8">write_to_file</a>( path, [&amp;]( std::ostream &amp; stream ) {</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <a class="code hl_class" href="classJsonOut.html">JsonOut</a> jsout( stream );</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        jsout.start_object();</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordflow">for</span>( <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> : mods ) {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            jsout.member( <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str() );</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <a class="code hl_function" href="namespacecata.html#a06c7bd233503b55c2b9c58906739568a">serialize_lua_table</a>( t[<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str()], jsout );</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        }</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        jsout.end_object();</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }, <span class="stringliteral">&quot;world_lua_state&quot;</span> );</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>}</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacecata.html#afeb311c755909884cf5a9778b4f91671">load_world_lua_state</a>( <span class="keyword">const</span> std::string &amp;path )</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>{</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    lua_state &amp;state = *<a class="code hl_function" href="classDynamicDataLoader.html#adca1972b6d79ffd55d6d7ca1a0c329b9">DynamicDataLoader::get_instance</a>().<a class="code hl_variable" href="classDynamicDataLoader.html#aacb35b3527920adc4e56166a4d8f730a">lua</a>;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemod__management.html#a2b453b753864424a211ee499133505ed">mod_management::t_mod_list</a> &amp;mods = <a class="code hl_variable" href="worldfactory_8cpp.html#a565015a7cbda226682041968982faa57">world_generator</a>-&gt;active_world-&gt;active_mod_order;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    sol::table t = get_mod_storage_table( state );</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a> = <a class="code hl_function" href="cata__utility_8cpp.html#afc8cc3e35ba50c37cf8597c5fa334c82">read_from_file_optional</a>( path, [&amp;]( std::istream &amp; stream ) {</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <a class="code hl_class" href="classJsonIn.html">JsonIn</a> jsin( stream );</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <a class="code hl_class" href="classJsonObject.html">JsonObject</a> jsobj = jsin.<a class="code hl_function" href="classJsonObject.html#a0cd609c1bb7527609e6025d54f427a5c">get_object</a>();</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keywordflow">for</span>( <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> : mods ) {</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keywordflow">if</span>( !jsobj.<a class="code hl_function" href="classJsonObject.html#a49ff0ef5ec58e2cf47dcaa551eb2b472">has_object</a>( <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str() ) ) {</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                <span class="comment">// Mod could have been added to existing save</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            }</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <a class="code hl_class" href="classJsonObject.html">JsonObject</a> mod_obj = jsobj.<a class="code hl_function" href="classJsonObject.html#a0cd609c1bb7527609e6025d54f427a5c">get_object</a>( <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str() );</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <a class="code hl_function" href="namespacecata.html#aedeeb52f0d8a8f4034c069f284b4495a">deserialize_lua_table</a>( t[<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str()], mod_obj );</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        }</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    } );</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_function" href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">run_on_game_load_hooks</a>( state );</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>;</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>}</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>std::unique_ptr&lt;lua_state, lua_state_deleter&gt; <a class="code hl_function" href="namespacecata.html#a30d49df338e8056d8899fd5c99a2692f">make_wrapped_state</a>()</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>{</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    std::unique_ptr&lt;lua_state, lua_state_deleter&gt; <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>(</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="keyword">new</span> lua_state{ <a class="code hl_function" href="catalua__impl_8h.html#a32609a9200bd4c0bc611c32db5153410">make_lua_state</a>() },</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        lua_state_deleter{}</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    );</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    sol::state &amp;lua = <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>-&gt;lua;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    sol::table game_table = lua.create_table();</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    lua.globals()[<span class="stringliteral">&quot;game&quot;</span>] = game_table;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_struct" href="structcata_1_1lua__state.html">cata::lua_state</a> *state = <a class="code hl_function" href="classDynamicDataLoader.html#adca1972b6d79ffd55d6d7ca1a0c329b9">DynamicDataLoader::get_instance</a>().<a class="code hl_variable" href="classDynamicDataLoader.html#aacb35b3527920adc4e56166a4d8f730a">lua</a>.get();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span>( !state ) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    sol::state container;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    luaL_traceback( container.lua_state(), state-&gt;<a class="code hl_variable" href="structcata_1_1lua__state.html#ae788c64f8d334f74709643b48aff4221">lua</a>.lua_state(), <span class="stringliteral">&quot;=== Lua backtrace report ===&quot;</span>, 0 );</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    std::string data = sol::stack::pop&lt;std::string&gt;( container );</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    out &lt;&lt; data &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword">static</span> sol::table get_mod_storage_table( lua_state &amp;state )</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>{</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">return</span> state.lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;cata_internal&quot;</span>][<span class="stringliteral">&quot;mod_storage&quot;</span>];</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacecata.html#a5fd938dc35f909bb49681c496c4fba74">save_world_lua_state</a>( <span class="keyword">const</span> std::string &amp;path )</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>{</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    lua_state &amp;state = *<a class="code hl_function" href="classDynamicDataLoader.html#adca1972b6d79ffd55d6d7ca1a0c329b9">DynamicDataLoader::get_instance</a>().<a class="code hl_variable" href="classDynamicDataLoader.html#aacb35b3527920adc4e56166a4d8f730a">lua</a>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemod__management.html#a2b453b753864424a211ee499133505ed">mod_management::t_mod_list</a> &amp;mods = <a class="code hl_variable" href="worldfactory_8cpp.html#a565015a7cbda226682041968982faa57">world_generator</a>-&gt;active_world-&gt;active_mod_order;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    sol::table t = get_mod_storage_table( state );</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_function" href="namespacecata.html#aa161600db431774cdc9071771793bb21">run_on_game_save_hooks</a>( state );</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a> = <a class="code hl_function" href="cata__utility_8cpp.html#a622c5bbf103e24e414fea34574eb68a8">write_to_file</a>( path, [&amp;]( std::ostream &amp; stream ) {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_class" href="classJsonOut.html">JsonOut</a> jsout( stream );</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        jsout.start_object();</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordflow">for</span>( <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> : mods ) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            jsout.member( <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str() );</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <a class="code hl_function" href="namespacecata.html#a06c7bd233503b55c2b9c58906739568a">serialize_lua_table</a>( t[<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str()], jsout );</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        jsout.end_object();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }, <span class="stringliteral">&quot;world_lua_state&quot;</span> );</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>}</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacecata.html#afeb311c755909884cf5a9778b4f91671">load_world_lua_state</a>( <span class="keyword">const</span> std::string &amp;path )</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>{</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    lua_state &amp;state = *<a class="code hl_function" href="classDynamicDataLoader.html#adca1972b6d79ffd55d6d7ca1a0c329b9">DynamicDataLoader::get_instance</a>().<a class="code hl_variable" href="classDynamicDataLoader.html#aacb35b3527920adc4e56166a4d8f730a">lua</a>;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemod__management.html#a2b453b753864424a211ee499133505ed">mod_management::t_mod_list</a> &amp;mods = <a class="code hl_variable" href="worldfactory_8cpp.html#a565015a7cbda226682041968982faa57">world_generator</a>-&gt;active_world-&gt;active_mod_order;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    sol::table t = get_mod_storage_table( state );</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a> = <a class="code hl_function" href="cata__utility_8cpp.html#afc8cc3e35ba50c37cf8597c5fa334c82">read_from_file_optional</a>( path, [&amp;]( std::istream &amp; stream ) {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <a class="code hl_class" href="classJsonIn.html">JsonIn</a> jsin( stream );</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <a class="code hl_class" href="classJsonObject.html">JsonObject</a> jsobj = jsin.<a class="code hl_function" href="classJsonObject.html#a0cd609c1bb7527609e6025d54f427a5c">get_object</a>();</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordflow">for</span>( <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> : mods ) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keywordflow">if</span>( !jsobj.<a class="code hl_function" href="classJsonObject.html#a49ff0ef5ec58e2cf47dcaa551eb2b472">has_object</a>( <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str() ) ) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                <span class="comment">// Mod could have been added to existing save</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <a class="code hl_class" href="classJsonObject.html">JsonObject</a> mod_obj = jsobj.<a class="code hl_function" href="classJsonObject.html#a0cd609c1bb7527609e6025d54f427a5c">get_object</a>( <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str() );</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <a class="code hl_function" href="namespacecata.html#aedeeb52f0d8a8f4034c069f284b4495a">deserialize_lua_table</a>( t[<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str()], mod_obj );</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    } );</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <a class="code hl_function" href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">run_on_game_load_hooks</a>( state );</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>}</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>std::unique_ptr&lt;lua_state, lua_state_deleter&gt; <a class="code hl_function" href="namespacecata.html#a30d49df338e8056d8899fd5c99a2692f">make_wrapped_state</a>()</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>{</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    std::unique_ptr&lt;lua_state, lua_state_deleter&gt; <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>(</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="keyword">new</span> lua_state{ <a class="code hl_function" href="catalua__impl_8h.html#a32609a9200bd4c0bc611c32db5153410">make_lua_state</a>() },</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        lua_state_deleter{}</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    );</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    sol::state &amp;lua = <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>-&gt;lua;</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>}</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    sol::table game_table = lua.create_table();</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    lua.globals()[<span class="stringliteral">&quot;game&quot;</span>] = game_table;</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a45cc954f4d089b2703a4bc86881836d0">init_global_state_tables</a>( lua_state &amp;state, <span class="keyword">const</span> std::vector&lt;mod_id&gt; &amp;modlist )</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>{</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    sol::state &amp;lua = state.lua;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    sol::table active_mods = lua.create_table();</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    sol::table mod_runtime = lua.create_table();</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    sol::table mod_storage = lua.create_table();</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    sol::table hooks = lua.create_table();</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i = 0; i &lt; modlist.size(); i++ ) {</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        active_mods[ i + 1 ] = modlist[i].str();</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        mod_runtime[ modlist[i].str() ] = lua.create_table();</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        mod_storage[ modlist[i].str() ] = lua.create_table();</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    }</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="comment">// Main game data table</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    sol::table gt = lua.globals()[<span class="stringliteral">&quot;game&quot;</span>];</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacecata_1_1hash64__detail.html#a5ca825db6fd06946302c60daa97333e4">ret</a>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>}</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a45cc954f4d089b2703a4bc86881836d0">init_global_state_tables</a>( lua_state &amp;state, <span class="keyword">const</span> std::vector&lt;mod_id&gt; &amp;modlist )</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>{</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    sol::state &amp;lua = state.lua;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    sol::table active_mods = lua.create_table();</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    sol::table mod_runtime = lua.create_table();</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    sol::table mod_storage = lua.create_table();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    sol::table hooks = lua.create_table();</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i = 0; i &lt; modlist.size(); i++ ) {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        active_mods[ i + 1 ] = modlist[i].str();</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        mod_runtime[ modlist[i].str() ] = lua.create_table();</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        mod_storage[ modlist[i].str() ] = lua.create_table();</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="comment">// Internal table that bypasses read-only facades</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    sol::table it = lua.create_table();</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    gt[<span class="stringliteral">&quot;cata_internal&quot;</span>] = it;</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    it[<span class="stringliteral">&quot;active_mods&quot;</span>] = active_mods;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    it[<span class="stringliteral">&quot;mod_runtime&quot;</span>] = mod_runtime;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    it[<span class="stringliteral">&quot;mod_storage&quot;</span>] = mod_storage;</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    it[<span class="stringliteral">&quot;on_every_x_hooks&quot;</span>] = std::vector&lt;cata::on_every_x_hooks&gt;();</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    gt[<span class="stringliteral">&quot;hooks&quot;</span>] = hooks;</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="comment">// Runtime infrastructure</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    gt[<span class="stringliteral">&quot;active_mods&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, active_mods );</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    gt[<span class="stringliteral">&quot;mod_runtime&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, mod_runtime );</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    gt[<span class="stringliteral">&quot;mod_storage&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, mod_storage );</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    gt[<span class="stringliteral">&quot;hooks&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, hooks );</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="comment">// iuse functions</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    gt[<span class="stringliteral">&quot;iuse_functions&quot;</span>] = lua.create_table();</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="comment">// Main game data table</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    sol::table gt = lua.globals()[<span class="stringliteral">&quot;game&quot;</span>];</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="comment">// Internal table that bypasses read-only facades</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    sol::table it = lua.create_table();</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    gt[<span class="stringliteral">&quot;cata_internal&quot;</span>] = it;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    it[<span class="stringliteral">&quot;active_mods&quot;</span>] = active_mods;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    it[<span class="stringliteral">&quot;mod_runtime&quot;</span>] = mod_runtime;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    it[<span class="stringliteral">&quot;mod_storage&quot;</span>] = mod_storage;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    it[<span class="stringliteral">&quot;on_every_x_hooks&quot;</span>] = std::vector&lt;cata::on_every_x_hooks&gt;();</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    gt[<span class="stringliteral">&quot;hooks&quot;</span>] = hooks;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="comment">// Runtime infrastructure</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    gt[<span class="stringliteral">&quot;active_mods&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, active_mods );</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    gt[<span class="stringliteral">&quot;mod_runtime&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, mod_runtime );</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    gt[<span class="stringliteral">&quot;mod_storage&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, mod_storage );</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    gt[<span class="stringliteral">&quot;hooks&quot;</span>] = <a class="code hl_function" href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">make_readonly_table</a>( lua, hooks );</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="comment">// hooks</span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    hooks[<span class="stringliteral">&quot;on_game_load&quot;</span>] = lua.create_table();</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    hooks[<span class="stringliteral">&quot;on_game_save&quot;</span>] = lua.create_table();</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    hooks[<span class="stringliteral">&quot;on_mapgen_postprocess&quot;</span>] = lua.create_table();</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>}</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#af0813e0633d05534991f58dc3494c48e">set_mod_being_loaded</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>{</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    sol::state &amp;lua = state.lua;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;current_mod&quot;</span>] = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str();</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>}</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#ac9b545b308f174e19cf56f6f7083a780">clear_mod_being_loaded</a>( lua_state &amp;state )</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>{</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    sol::state &amp;lua = state.lua;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;current_mod&quot;</span>] = sol::nil;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>}</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a76187ff0042eba8c8f7b3ea3f52f8d1c">run_mod_preload_script</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>{</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    std::string script_path = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>-&gt;path + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;preload.lua&quot;</span>;</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordflow">if</span>( !<a class="code hl_function" href="filesystem_8cpp.html#aea678a36e4bf1e9ff808c85f1f367d30">file_exist</a>( script_path ) ) {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <a class="code hl_function" href="catalua__impl_8h.html#a649a91e852aeabded1d8686ceb8fb262">run_lua_script</a>( state.lua, script_path );</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="comment">// iuse functions</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    gt[<span class="stringliteral">&quot;iuse_functions&quot;</span>] = lua.create_table();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="comment">// hooks</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    hooks[<span class="stringliteral">&quot;on_game_load&quot;</span>] = lua.create_table();</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    hooks[<span class="stringliteral">&quot;on_game_save&quot;</span>] = lua.create_table();</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    hooks[<span class="stringliteral">&quot;on_mapgen_postprocess&quot;</span>] = lua.create_table();</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#af0813e0633d05534991f58dc3494c48e">set_mod_being_loaded</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>{</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    sol::state &amp;lua = state.lua;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;current_mod&quot;</span>] = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>.str();</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>}</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#ac9b545b308f174e19cf56f6f7083a780">clear_mod_being_loaded</a>( lua_state &amp;state )</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>{</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    sol::state &amp;lua = state.lua;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;current_mod&quot;</span>] = sol::nil;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>}</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a76187ff0042eba8c8f7b3ea3f52f8d1c">run_mod_preload_script</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>{</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    std::string script_path = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>-&gt;path + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;preload.lua&quot;</span>;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordflow">if</span>( !<a class="code hl_function" href="filesystem_8cpp.html#aea678a36e4bf1e9ff808c85f1f367d30">file_exist</a>( script_path ) ) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a67e249765440c0b079594e0bd541a948">run_mod_finalize_script</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>{</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    std::string script_path = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>-&gt;path + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;finalize.lua&quot;</span>;</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keywordflow">if</span>( !<a class="code hl_function" href="filesystem_8cpp.html#aea678a36e4bf1e9ff808c85f1f367d30">file_exist</a>( script_path ) ) {</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <a class="code hl_function" href="catalua__impl_8h.html#a649a91e852aeabded1d8686ceb8fb262">run_lua_script</a>( state.lua, script_path );</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>}</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    <a class="code hl_function" href="catalua__impl_8h.html#a649a91e852aeabded1d8686ceb8fb262">run_lua_script</a>( state.lua, script_path );</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>}</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a67e249765440c0b079594e0bd541a948">run_mod_finalize_script</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>{</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    std::string script_path = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>-&gt;path + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;finalize.lua&quot;</span>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="keywordflow">if</span>( !<a class="code hl_function" href="filesystem_8cpp.html#aea678a36e4bf1e9ff808c85f1f367d30">file_exist</a>( script_path ) ) {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    }</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a1d80c5b0a0501139c9148c191273e007">run_mod_main_script</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>{</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    std::string script_path = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>-&gt;path + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;main.lua&quot;</span>;</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="keywordflow">if</span>( !<a class="code hl_function" href="filesystem_8cpp.html#aea678a36e4bf1e9ff808c85f1f367d30">file_exist</a>( script_path ) ) {</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <a class="code hl_function" href="catalua__impl_8h.html#a649a91e852aeabded1d8686ceb8fb262">run_lua_script</a>( state.lua, script_path );</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>}</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <a class="code hl_function" href="catalua__impl_8h.html#a649a91e852aeabded1d8686ceb8fb262">run_lua_script</a>( state.lua, script_path );</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>}</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a1d80c5b0a0501139c9148c191273e007">run_mod_main_script</a>( lua_state &amp;state, <span class="keyword">const</span> <a class="code hl_class" href="classstring__id.html">mod_id</a> &amp;<a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a> )</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>{</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    std::string script_path = <a class="code hl_enumeration" href="namespaceenchant__vals.html#acd6a6ebb27f9ecb82b3bce1d3aef2998">mod</a>-&gt;path + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;main.lua&quot;</span>;</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keywordflow">if</span>( !<a class="code hl_function" href="filesystem_8cpp.html#aea678a36e4bf1e9ff808c85f1f367d30">file_exist</a>( script_path ) ) {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    }</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( lua_state &amp;state, <a class="code hl_typedef" href="fmtlib__core_8h.html#a204ca715c2febee035464fa53dfc50c4">std::string_view</a> hooks_table, Args &amp;&amp;...args )</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>{</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    sol::state &amp;lua = state.lua;</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    sol::table hooks = lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;hooks&quot;</span>][hooks_table];</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;ref : hooks ) {</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <span class="keywordtype">int</span> idx = -1;</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            idx = ref.first.as&lt;<span class="keywordtype">int</span>&gt;();</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>            sol::protected_function func = ref.second;</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>            sol::protected_function_result res = func( std::forward&lt;Args&gt;( args )... );</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>            <a class="code hl_function" href="catalua__impl_8h.html#a3f5194c9bbe9d91e846956db072d3078">check_func_result</a>( res );</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        } <span class="keywordflow">catch</span>( std::runtime_error &amp;e ) {</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            <a class="code hl_define" href="debug_8h.html#a87e509562277a7ada3a75330d00cb445">debugmsg</a>( <span class="stringliteral">&quot;Failed to run hook %s[%d]: %s&quot;</span>, hooks_table, idx, e.what() );</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        }</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    }</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>}</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a06a8b92a2facef8816482a369e7f076f">reg_lua_iuse_actors</a>( lua_state &amp;state, <a class="code hl_class" href="classItem__factory.html">Item_factory</a> &amp;ifactory )</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>{</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    sol::state &amp;lua = state.lua;</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    sol::table funcs = lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;iuse_functions&quot;</span>];</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span> </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;ref : funcs ) {</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        std::string key;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            key = ref.first.as&lt;std::string&gt;();</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>            sol::protected_function func = ref.second;</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>            ifactory.<a class="code hl_function" href="classItem__factory.html#ab6bd27c42a0bb631ea90d9745c3c031b">add_actor</a>( std::make_unique&lt;lua_iuse_actor&gt;( key, <a class="code hl_function" href="namespaceavatar__action.html#a76ba74774376a08222b8cdcce08f7304">std::move</a>( func ) ) );</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        } <span class="keywordflow">catch</span>( std::runtime_error &amp;e ) {</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>            <a class="code hl_define" href="debug_8h.html#a87e509562277a7ada3a75330d00cb445">debugmsg</a>( <span class="stringliteral">&quot;Failed to extract iuse_functions k=&#39;%s&#39;: %s&quot;</span>, key, e.what() );</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        }</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    }</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>}</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a8695395c5a433961d9620d9b92a17425">run_on_every_x_hooks</a>( lua_state &amp;state )</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>{</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    std::vector&lt;cata::on_every_x_hooks&gt; &amp;master_table =</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        state.lua[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;cata_internal&quot;</span>][<span class="stringliteral">&quot;on_every_x_hooks&quot;</span>];</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    <span class="keywordflow">for</span>( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : master_table ) {</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>        <span class="keywordflow">if</span>( <a class="code hl_function" href="namespacecalendar.html#a356df28513f4d655ae35c312ab6e7d55">calendar::once_every</a>( entry.interval ) ) {</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>            <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;func : entry.functions ) {</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                    sol::protected_function_result res = func();</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                    <a class="code hl_function" href="catalua__impl_8h.html#a3f5194c9bbe9d91e846956db072d3078">check_func_result</a>( res );</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                } <span class="keywordflow">catch</span>( std::runtime_error &amp;e ) {</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                    <a class="code hl_define" href="debug_8h.html#a87e509562277a7ada3a75330d00cb445">debugmsg</a>(</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                        <span class="stringliteral">&quot;Failed to run hook on_every_x(interval = %s): %s&quot;</span>,</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                        <a class="code hl_function" href="calendar_8cpp.html#aeb989652ea2bf7fd03b07a74fd30bd7a">to_string</a>( entry.interval ), e.what()</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>                    );</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>                }</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            }</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        }</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>    }</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>}</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>} <span class="comment">// namespace cata</span></div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="preprocessor">#endif </span><span class="comment">// LUA</span></div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecata.html">cata</a></div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>{</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <a class="code hl_function" href="catalua__impl_8h.html#a649a91e852aeabded1d8686ceb8fb262">run_lua_script</a>( state.lua, script_path );</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>}</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( lua_state &amp;state, <a class="code hl_typedef" href="fmtlib__core_8h.html#a204ca715c2febee035464fa53dfc50c4">std::string_view</a> hooks_table, Args &amp;&amp;...args )</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>{</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    sol::state &amp;lua = state.lua;</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    sol::table hooks = lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;hooks&quot;</span>][hooks_table];</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;ref : hooks ) {</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        <span class="keywordtype">int</span> idx = -1;</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>            idx = ref.first.as&lt;<span class="keywordtype">int</span>&gt;();</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            sol::protected_function func = ref.second;</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            sol::protected_function_result res = func( std::forward&lt;Args&gt;( args )... );</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            <a class="code hl_function" href="catalua__impl_8h.html#a3f5194c9bbe9d91e846956db072d3078">check_func_result</a>( res );</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        } <span class="keywordflow">catch</span>( std::runtime_error &amp;e ) {</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>            <a class="code hl_define" href="debug_8h.html#a87e509562277a7ada3a75330d00cb445">debugmsg</a>( <span class="stringliteral">&quot;Failed to run hook %s[%d]: %s&quot;</span>, hooks_table, idx, e.what() );</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        }</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    }</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>}</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a06a8b92a2facef8816482a369e7f076f">reg_lua_iuse_actors</a>( lua_state &amp;state, <a class="code hl_class" href="classItem__factory.html">Item_factory</a> &amp;ifactory )</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>{</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    sol::state &amp;lua = state.lua;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    sol::table funcs = lua.globals()[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;iuse_functions&quot;</span>];</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;ref : funcs ) {</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        std::string key;</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>            key = ref.first.as&lt;std::string&gt;();</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>            sol::protected_function func = ref.second;</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>            ifactory.<a class="code hl_function" href="classItem__factory.html#ab6bd27c42a0bb631ea90d9745c3c031b">add_actor</a>( std::make_unique&lt;lua_iuse_actor&gt;( key, <a class="code hl_function" href="namespaceavatar__action.html#a76ba74774376a08222b8cdcce08f7304">std::move</a>( func ) ) );</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        } <span class="keywordflow">catch</span>( std::runtime_error &amp;e ) {</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>            <a class="code hl_define" href="debug_8h.html#a87e509562277a7ada3a75330d00cb445">debugmsg</a>( <span class="stringliteral">&quot;Failed to extract iuse_functions k=&#39;%s&#39;: %s&quot;</span>, key, e.what() );</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>        }</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    }</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>}</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a8695395c5a433961d9620d9b92a17425">run_on_every_x_hooks</a>( lua_state &amp;state )</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>{</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    std::vector&lt;cata::on_every_x_hooks&gt; &amp;master_table =</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        state.lua[<span class="stringliteral">&quot;game&quot;</span>][<span class="stringliteral">&quot;cata_internal&quot;</span>][<span class="stringliteral">&quot;on_every_x_hooks&quot;</span>];</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <span class="keywordflow">for</span>( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : master_table ) {</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <span class="keywordflow">if</span>( <a class="code hl_function" href="namespacecalendar.html#a356df28513f4d655ae35c312ab6e7d55">calendar::once_every</a>( entry.interval ) ) {</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>            <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;func : entry.functions ) {</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                    sol::protected_function_result res = func();</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                    <a class="code hl_function" href="catalua__impl_8h.html#a3f5194c9bbe9d91e846956db072d3078">check_func_result</a>( res );</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                } <span class="keywordflow">catch</span>( std::runtime_error &amp;e ) {</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>                    <a class="code hl_define" href="debug_8h.html#a87e509562277a7ada3a75330d00cb445">debugmsg</a>(</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>                        <span class="stringliteral">&quot;Failed to run hook on_every_x(interval = %s): %s&quot;</span>,</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>                        <a class="code hl_function" href="calendar_8cpp.html#aeb989652ea2bf7fd03b07a74fd30bd7a">to_string</a>( entry.interval ), e.what()</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>                    );</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>                }</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>            }</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        }</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    }</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>}</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>} <span class="comment">// namespace cata</span></div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="preprocessor">#endif </span><span class="comment">// LUA</span></div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span> </div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno"><a class="line" href="namespacecata.html#ade412dd995010789e4bc8f4bee85020c">  405</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacecata.html#ade412dd995010789e4bc8f4bee85020c">get_lua_api_version</a>()</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecata.html">cata</a></div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>{</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="catalua_8cpp.html#a0edd4c7bb99aefd1351c645998b33755">LUA_API_VERSION</a>;</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>}</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno"><a class="line" href="structcata_1_1lua__state__deleter.html#a0f2ca3d35013077827056c91cd2f803f">  410</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="structcata_1_1lua__state__deleter.html#a0f2ca3d35013077827056c91cd2f803f">lua_state_deleter::operator()</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> *state )<span class="keyword"> const</span></div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    <span class="keyword">delete</span> state;</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>}</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span> </div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="namespacecata.html#aa161600db431774cdc9071771793bb21">  415</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#aa161600db431774cdc9071771793bb21">run_on_game_save_hooks</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> &amp;state )</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>{</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( state, <span class="stringliteral">&quot;on_game_save&quot;</span> );</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>}</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno"><a class="line" href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">  420</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">run_on_game_load_hooks</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> &amp;state )</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>{</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( state, <span class="stringliteral">&quot;on_game_load&quot;</span> );</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>}</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="namespacecata.html#a1e3c720e2bf07bbe033938ffdac756d5">  425</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a1e3c720e2bf07bbe033938ffdac756d5">run_on_mapgen_postprocess_hooks</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> &amp;state, <a class="code hl_class" href="classmap.html">map</a> &amp;m, <span class="keyword">const</span> <a class="code hl_struct" href="structtripoint.html">tripoint</a> &amp;p,</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>                                      <span class="keyword">const</span> <a class="code hl_class" href="classtime__point.html">time_point</a> &amp;when )</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>{</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( state, <span class="stringliteral">&quot;on_mapgen_postprocess&quot;</span>, m, p, when );</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>}</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>} <span class="comment">// namespace cata</span></div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno"><a class="line" href="namespacecata.html#ade412dd995010789e4bc8f4bee85020c">  408</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacecata.html#ade412dd995010789e4bc8f4bee85020c">get_lua_api_version</a>()</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>{</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="catalua_8cpp.html#a0edd4c7bb99aefd1351c645998b33755">LUA_API_VERSION</a>;</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>}</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="structcata_1_1lua__state__deleter.html#a0f2ca3d35013077827056c91cd2f803f">  413</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="structcata_1_1lua__state__deleter.html#a0f2ca3d35013077827056c91cd2f803f">lua_state_deleter::operator()</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> *state )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    <span class="keyword">delete</span> state;</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>}</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno"><a class="line" href="namespacecata.html#aa161600db431774cdc9071771793bb21">  418</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#aa161600db431774cdc9071771793bb21">run_on_game_save_hooks</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> &amp;state )</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>{</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( state, <span class="stringliteral">&quot;on_game_save&quot;</span> );</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>}</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno"><a class="line" href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">  423</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">run_on_game_load_hooks</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> &amp;state )</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>{</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( state, <span class="stringliteral">&quot;on_game_load&quot;</span> );</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>}</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno"><a class="line" href="namespacecata.html#a1e3c720e2bf07bbe033938ffdac756d5">  428</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacecata.html#a1e3c720e2bf07bbe033938ffdac756d5">run_on_mapgen_postprocess_hooks</a>( <a class="code hl_struct" href="structcata_1_1lua__state.html">lua_state</a> &amp;state, <a class="code hl_class" href="classmap.html">map</a> &amp;m, <span class="keyword">const</span> <a class="code hl_struct" href="structtripoint.html">tripoint</a> &amp;p,</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>                                      <span class="keyword">const</span> <a class="code hl_class" href="classtime__point.html">time_point</a> &amp;when )</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>{</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    <a class="code hl_function" href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">run_hooks</a>( state, <span class="stringliteral">&quot;on_mapgen_postprocess&quot;</span>, m, p, when );</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>}</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>} <span class="comment">// namespace cata</span></div>
 <div class="ttc" id="aavatar_8h_html"><div class="ttname"><a href="avatar_8h.html">avatar.h</a></div></div>
 <div class="ttc" id="acalendar_8cpp_html_aeb989652ea2bf7fd03b07a74fd30bd7a"><div class="ttname"><a href="calendar_8cpp.html#aeb989652ea2bf7fd03b07a74fd30bd7a">to_string</a></div><div class="ttdeci">std::string to_string(const time_duration &amp;d)</div><div class="ttdoc">Returns a string showing a duration.</div><div class="ttdef"><b>Definition:</b> <a href="calendar_8cpp_source.html#l00327">calendar.cpp:327</a></div></div>
 <div class="ttc" id="acata__utility_8cpp_html_a622c5bbf103e24e414fea34574eb68a8"><div class="ttname"><a href="cata__utility_8cpp.html#a622c5bbf103e24e414fea34574eb68a8">write_to_file</a></div><div class="ttdeci">void write_to_file(const std::string &amp;path, const std::function&lt; void(std::ostream &amp;)&gt; &amp;writer)</div><div class="ttdef"><b>Definition:</b> <a href="cata__utility_8cpp_source.html#l00454">cata_utility.cpp:454</a></div></div>
@@ -570,7 +573,7 @@ $(document).ready(function(){initNavTree('catalua_8cpp_source.html',''); initRes
 <div class="ttc" id="anamespacecata_html_a06a8b92a2facef8816482a369e7f076f"><div class="ttname"><a href="namespacecata.html#a06a8b92a2facef8816482a369e7f076f">cata::reg_lua_iuse_actors</a></div><div class="ttdeci">void reg_lua_iuse_actors(lua_state &amp;, Item_factory &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00087">catalua.cpp:87</a></div></div>
 <div class="ttc" id="anamespacecata_html_a06c7bd233503b55c2b9c58906739568a"><div class="ttname"><a href="namespacecata.html#a06c7bd233503b55c2b9c58906739568a">cata::serialize_lua_table</a></div><div class="ttdeci">void serialize_lua_table(sol::table t, JsonOut &amp;jsout)</div></div>
 <div class="ttc" id="anamespacecata_html_a1d80c5b0a0501139c9148c191273e007"><div class="ttname"><a href="namespacecata.html#a1d80c5b0a0501139c9148c191273e007">cata::run_mod_main_script</a></div><div class="ttdeci">void run_mod_main_script(lua_state &amp;, const mod_id &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00086">catalua.cpp:86</a></div></div>
-<div class="ttc" id="anamespacecata_html_a1e3c720e2bf07bbe033938ffdac756d5"><div class="ttname"><a href="namespacecata.html#a1e3c720e2bf07bbe033938ffdac756d5">cata::run_on_mapgen_postprocess_hooks</a></div><div class="ttdeci">void run_on_mapgen_postprocess_hooks(lua_state &amp;state, map &amp;m, const tripoint &amp;p, const time_point &amp;when)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00425">catalua.cpp:425</a></div></div>
+<div class="ttc" id="anamespacecata_html_a1e3c720e2bf07bbe033938ffdac756d5"><div class="ttname"><a href="namespacecata.html#a1e3c720e2bf07bbe033938ffdac756d5">cata::run_on_mapgen_postprocess_hooks</a></div><div class="ttdeci">void run_on_mapgen_postprocess_hooks(lua_state &amp;state, map &amp;m, const tripoint &amp;p, const time_point &amp;when)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00428">catalua.cpp:428</a></div></div>
 <div class="ttc" id="anamespacecata_html_a29422a8f2d5d6867319034411412346e"><div class="ttname"><a href="namespacecata.html#a29422a8f2d5d6867319034411412346e">cata::generate_lua_docs</a></div><div class="ttdeci">bool generate_lua_docs()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00035">catalua.cpp:35</a></div></div>
 <div class="ttc" id="anamespacecata_html_a30d49df338e8056d8899fd5c99a2692f"><div class="ttname"><a href="namespacecata.html#a30d49df338e8056d8899fd5c99a2692f">cata::make_wrapped_state</a></div><div class="ttdeci">std::unique_ptr&lt; lua_state, lua_state_deleter &gt; make_wrapped_state()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00074">catalua.cpp:74</a></div></div>
 <div class="ttc" id="anamespacecata_html_a3b7d88cf24ff372e1ce753ba18cc1051"><div class="ttname"><a href="namespacecata.html#a3b7d88cf24ff372e1ce753ba18cc1051">cata::has_lua</a></div><div class="ttdeci">bool has_lua()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00020">catalua.cpp:20</a></div></div>
@@ -581,14 +584,14 @@ $(document).ready(function(){initNavTree('catalua_8cpp_source.html',''); initRes
 <div class="ttc" id="anamespacecata_html_a76187ff0042eba8c8f7b3ea3f52f8d1c"><div class="ttname"><a href="namespacecata.html#a76187ff0042eba8c8f7b3ea3f52f8d1c">cata::run_mod_preload_script</a></div><div class="ttdeci">void run_mod_preload_script(lua_state &amp;, const mod_id &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00084">catalua.cpp:84</a></div></div>
 <div class="ttc" id="anamespacecata_html_a8695395c5a433961d9620d9b92a17425"><div class="ttname"><a href="namespacecata.html#a8695395c5a433961d9620d9b92a17425">cata::run_on_every_x_hooks</a></div><div class="ttdeci">void run_on_every_x_hooks(lua_state &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00092">catalua.cpp:92</a></div></div>
 <div class="ttc" id="anamespacecata_html_a9248faa992963d0c77f8628d24a25b00"><div class="ttname"><a href="namespacecata.html#a9248faa992963d0c77f8628d24a25b00">cata::run_hooks</a></div><div class="ttdeci">void run_hooks(Args &amp;&amp;...)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00090">catalua.cpp:90</a></div></div>
-<div class="ttc" id="anamespacecata_html_aa161600db431774cdc9071771793bb21"><div class="ttname"><a href="namespacecata.html#aa161600db431774cdc9071771793bb21">cata::run_on_game_save_hooks</a></div><div class="ttdeci">void run_on_game_save_hooks(lua_state &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00415">catalua.cpp:415</a></div></div>
+<div class="ttc" id="anamespacecata_html_aa161600db431774cdc9071771793bb21"><div class="ttname"><a href="namespacecata.html#aa161600db431774cdc9071771793bb21">cata::run_on_game_save_hooks</a></div><div class="ttdeci">void run_on_game_save_hooks(lua_state &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00418">catalua.cpp:418</a></div></div>
 <div class="ttc" id="anamespacecata_html_aa9e1ec68114dd412703058cd1ddee4ab"><div class="ttname"><a href="namespacecata.html#aa9e1ec68114dd412703058cd1ddee4ab">cata::make_readonly_table</a></div><div class="ttdeci">sol::table make_readonly_table(sol::state_view &amp;lua, sol::table read_from)</div></div>
 <div class="ttc" id="anamespacecata_html_ab0f402eb159ec7845e97264b390e1a77"><div class="ttname"><a href="namespacecata.html#ab0f402eb159ec7845e97264b390e1a77">cata::show_lua_console_impl</a></div><div class="ttdeci">void show_lua_console_impl()</div></div>
 <div class="ttc" id="anamespacecata_html_abff66208ce69c66df470063c63fd6182"><div class="ttname"><a href="namespacecata.html#abff66208ce69c66df470063c63fd6182">cata::get_lapi_version_string</a></div><div class="ttdeci">std::string get_lapi_version_string()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00025">catalua.cpp:25</a></div></div>
 <div class="ttc" id="anamespacecata_html_ac9b545b308f174e19cf56f6f7083a780"><div class="ttname"><a href="namespacecata.html#ac9b545b308f174e19cf56f6f7083a780">cata::clear_mod_being_loaded</a></div><div class="ttdeci">void clear_mod_being_loaded(lua_state &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00083">catalua.cpp:83</a></div></div>
-<div class="ttc" id="anamespacecata_html_acf75a3583c9f41b0d384110abd4517f4"><div class="ttname"><a href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">cata::run_on_game_load_hooks</a></div><div class="ttdeci">void run_on_game_load_hooks(lua_state &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00420">catalua.cpp:420</a></div></div>
+<div class="ttc" id="anamespacecata_html_acf75a3583c9f41b0d384110abd4517f4"><div class="ttname"><a href="namespacecata.html#acf75a3583c9f41b0d384110abd4517f4">cata::run_on_game_load_hooks</a></div><div class="ttdeci">void run_on_game_load_hooks(lua_state &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00423">catalua.cpp:423</a></div></div>
 <div class="ttc" id="anamespacecata_html_ad02a0ba1ce87eebf569b15a56dde46ba"><div class="ttname"><a href="namespacecata.html#ad02a0ba1ce87eebf569b15a56dde46ba">cata::show_lua_console</a></div><div class="ttdeci">void show_lua_console()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00041">catalua.cpp:41</a></div></div>
-<div class="ttc" id="anamespacecata_html_ade412dd995010789e4bc8f4bee85020c"><div class="ttname"><a href="namespacecata.html#ade412dd995010789e4bc8f4bee85020c">cata::get_lua_api_version</a></div><div class="ttdeci">int get_lua_api_version()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00405">catalua.cpp:405</a></div></div>
+<div class="ttc" id="anamespacecata_html_ade412dd995010789e4bc8f4bee85020c"><div class="ttname"><a href="namespacecata.html#ade412dd995010789e4bc8f4bee85020c">cata::get_lua_api_version</a></div><div class="ttdeci">int get_lua_api_version()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00408">catalua.cpp:408</a></div></div>
 <div class="ttc" id="anamespacecata_html_aeb1fe094a4a64d970964855696b776b2"><div class="ttname"><a href="namespacecata.html#aeb1fe094a4a64d970964855696b776b2">cata::reload_lua_code</a></div><div class="ttdeci">void reload_lua_code()</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00050">catalua.cpp:50</a></div></div>
 <div class="ttc" id="anamespacecata_html_aedeeb52f0d8a8f4034c069f284b4495a"><div class="ttname"><a href="namespacecata.html#aedeeb52f0d8a8f4034c069f284b4495a">cata::deserialize_lua_table</a></div><div class="ttdeci">void deserialize_lua_table(sol::table t, JsonObject &amp;obj)</div></div>
 <div class="ttc" id="anamespacecata_html_af0813e0633d05534991f58dc3494c48e"><div class="ttname"><a href="namespacecata.html#af0813e0633d05534991f58dc3494c48e">cata::set_mod_being_loaded</a></div><div class="ttdeci">void set_mod_being_loaded(lua_state &amp;, const mod_id &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00082">catalua.cpp:82</a></div></div>
@@ -603,7 +606,7 @@ $(document).ready(function(){initNavTree('catalua_8cpp_source.html',''); initRes
 <div class="ttc" id="astring__formatter_8h_html_a8964099387da2f95396c67566bafce3d"><div class="ttname"><a href="string__formatter_8h.html#a8964099387da2f95396c67566bafce3d">string_format</a></div><div class="ttdeci">std::string string_format(std::string_view format, Args &amp;&amp;...args)</div><div class="ttdoc">Simple wrapper over string_formatter::parse.</div><div class="ttdef"><b>Definition:</b> <a href="string__formatter_8h_source.html#l00431">string_formatter.h:431</a></div></div>
 <div class="ttc" id="astring__formatter_8h_html_aac20eb73bc05a5d2c3f94345247a588c"><div class="ttname"><a href="string__formatter_8h.html#aac20eb73bc05a5d2c3f94345247a588c">cata_printf</a></div><div class="ttdeci">void cata_printf(std::string_view format, Args &amp;&amp;...args)</div><div class="ttdoc">Same as string_format, but prints its result to stdout.</div><div class="ttdef"><b>Definition:</b> <a href="string__formatter_8h_source.html#l00457">string_formatter.h:457</a></div></div>
 <div class="ttc" id="astructcata_1_1lua__state__deleter_html"><div class="ttname"><a href="structcata_1_1lua__state__deleter.html">cata::lua_state_deleter</a></div><div class="ttdef"><b>Definition:</b> <a href="catalua_8h_source.html#l00017">catalua.h:17</a></div></div>
-<div class="ttc" id="astructcata_1_1lua__state__deleter_html_a0f2ca3d35013077827056c91cd2f803f"><div class="ttname"><a href="structcata_1_1lua__state__deleter.html#a0f2ca3d35013077827056c91cd2f803f">cata::lua_state_deleter::operator()</a></div><div class="ttdeci">void operator()(lua_state *state) const</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00410">catalua.cpp:410</a></div></div>
+<div class="ttc" id="astructcata_1_1lua__state__deleter_html_a0f2ca3d35013077827056c91cd2f803f"><div class="ttname"><a href="structcata_1_1lua__state__deleter.html#a0f2ca3d35013077827056c91cd2f803f">cata::lua_state_deleter::operator()</a></div><div class="ttdeci">void operator()(lua_state *state) const</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00413">catalua.cpp:413</a></div></div>
 <div class="ttc" id="astructcata_1_1lua__state_html"><div class="ttname"><a href="structcata_1_1lua__state.html">cata::lua_state</a></div><div class="ttdoc">Lua state handle.</div><div class="ttdef"><b>Definition:</b> <a href="catalua_8cpp_source.html#l00015">catalua.cpp:15</a></div></div>
 <div class="ttc" id="astructcata_1_1lua__state_html_abb24c15677984f8e76b37e9fe0d8198f"><div class="ttname"><a href="structcata_1_1lua__state.html#abb24c15677984f8e76b37e9fe0d8198f">cata::lua_state::~lua_state</a></div><div class="ttdeci">~lua_state()=default</div></div>
 <div class="ttc" id="astructcata_1_1lua__state_html_ad5fbae72fae3ea4310934b401db53e38"><div class="ttname"><a href="structcata_1_1lua__state.html#ad5fbae72fae3ea4310934b401db53e38">cata::lua_state::lua_state</a></div><div class="ttdeci">lua_state()=default</div></div>
@@ -617,7 +620,7 @@ $(document).ready(function(){initNavTree('catalua_8cpp_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="catalua_8cpp.html">catalua.cpp</a></li>
-    <li class="footer">Generated on Thu Sep 21 2023 00:10:19 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 22:58:24 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

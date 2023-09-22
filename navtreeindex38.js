@@ -1,10 +1,5 @@
 var NAVTREEINDEX38 =
 {
-"classeditmap.html#a4506e921417e5d925d264b7d33f97eda":[36,0,240,15],
-"classeditmap.html#a4623d6840f4394ef030ad3a7103de99a":[36,0,240,33],
-"classeditmap.html#a46b97656bbdba290bcf832323efdaed7":[36,0,240,48],
-"classeditmap.html#a497e3c283ae71bdee7e138261e0fe32f":[36,0,240,42],
-"classeditmap.html#a4c1df4aaf1917a7a280dbad2bf1b0291":[36,0,240,24],
 "classeditmap.html#a4fe8f065a2ad1f164adb8ae3a88a3d7c":[36,0,240,26],
 "classeditmap.html#a516429c0845cb055c19b0c683023ea93":[36,0,240,14],
 "classeditmap.html#a5bee19b84378f1d363c66b776b409b97":[36,0,240,37],
@@ -249,5 +244,10 @@ var NAVTREEINDEX38 =
 "classenchantment.html#af4d07cdb0f5583c66f4d98b8785aa549":[36,0,250,22],
 "classenchantment.html#af6ebfca0924e5ba4b53bf357e8b16fd7":[36,0,250,3],
 "classenchantment.html#aff826c52a7f78a85f491fd9328a871f2":[36,0,250,4],
-"classenum__bitset.html":[36,0,252]
+"classenum__bitset.html":[36,0,252],
+"classenum__bitset.html#a08238ffad140381fbd58ad86ea58200a":[36,0,252,5],
+"classenum__bitset.html#a2612cf9d2d19221f5bad59747fd2d92a":[36,0,252,2],
+"classenum__bitset.html#a269117813ea14798b3f4ad5485c0061d":[36,0,252,15],
+"classenum__bitset.html#a288109ac8791a1113566ef7d97ea5904":[36,0,252,16],
+"classenum__bitset.html#a357d399d61a814187407646084f9e3ca":[36,0,252,12]
 };

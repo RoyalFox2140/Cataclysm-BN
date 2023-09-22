@@ -1,10 +1,5 @@
 var NAVTREEINDEX37 =
 {
-"classdialogue__window.html#a3a07028d3a275db3b5f0198dd5e0634e":[36,0,214,11],
-"classdialogue__window.html#a3a437e8feff4f9f69743dccce5f729d9":[36,0,214,13],
-"classdialogue__window.html#a4620cf4341679084e18a8a595e68a460":[36,0,214,4],
-"classdialogue__window.html#a60f5b05a01a0742c50bd90e68c719c98":[36,0,214,7],
-"classdialogue__window.html#a650e953f87fb0cd0b3c50c3b73390596":[36,0,214,3],
 "classdialogue__window.html#a745600736e9759515a42ed7462f51499":[36,0,214,16],
 "classdialogue__window.html#aa50b777546cb2a1a0702085e305c96b1":[36,0,214,6],
 "classdialogue__window.html#ae224081e3bd37afb43282894e8f51373":[36,0,214,1],
@@ -136,8 +131,8 @@ var NAVTREEINDEX37 =
 "classdispersion__sources.html#af9119f90d39a52caf16086dca87b1cac":[36,0,226,2],
 "classdistraction__manager_1_1distraction__manager__gui.html":[36,0,23,0],
 "classdistraction__manager_1_1distraction__manager__gui.html":[35,0,105,0],
-"classdistraction__manager_1_1distraction__manager__gui.html#a817fe59be179b9845f4f54f9bd983d18":[36,0,23,0,6],
 "classdistraction__manager_1_1distraction__manager__gui.html#a817fe59be179b9845f4f54f9bd983d18":[35,0,105,0,6],
+"classdistraction__manager_1_1distraction__manager__gui.html#a817fe59be179b9845f4f54f9bd983d18":[36,0,23,0,6],
 "classdistraction__manager_1_1distraction__manager__gui.html#aa13b3aa716a85d784bf8658aea9eae65":[36,0,23,0,5],
 "classdistraction__manager_1_1distraction__manager__gui.html#aa13b3aa716a85d784bf8658aea9eae65":[35,0,105,0,5],
 "classdistraction__manager_1_1distraction__manager__gui.html#aa7337ce65b967e4b4db28dbd4ea930fb":[36,0,23,0,1],
@@ -249,5 +244,10 @@ var NAVTREEINDEX37 =
 "classeditmap.html#a24004b5514f96186cfc53185affe734f":[36,0,240,7],
 "classeditmap.html#a309b170f618e96dac54e9f42ea8e5518":[36,0,240,34],
 "classeditmap.html#a3257e238c80e93949b846fbf121fa148":[36,0,240,41],
-"classeditmap.html#a369a3697efa930d789cea2a7e88a32ff":[36,0,240,10]
+"classeditmap.html#a369a3697efa930d789cea2a7e88a32ff":[36,0,240,10],
+"classeditmap.html#a4506e921417e5d925d264b7d33f97eda":[36,0,240,15],
+"classeditmap.html#a4623d6840f4394ef030ad3a7103de99a":[36,0,240,33],
+"classeditmap.html#a46b97656bbdba290bcf832323efdaed7":[36,0,240,48],
+"classeditmap.html#a497e3c283ae71bdee7e138261e0fe32f":[36,0,240,42],
+"classeditmap.html#a4c1df4aaf1917a7a280dbad2bf1b0291":[36,0,240,24]
 };

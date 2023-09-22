@@ -2,6 +2,7 @@ var classovermap__connection =
 [
     [ "cache", "structovermap__connection_1_1cache.html", "structovermap__connection_1_1cache" ],
     [ "subtype", "classovermap__connection_1_1subtype.html", "classovermap__connection_1_1subtype" ],
+    [ "can_start_at", "classovermap__connection.html#a0232fe47733957cdb94d7afee78f5639", null ],
     [ "check", "classovermap__connection.html#aa3024abee255a05c9c63ba1de334cad3", null ],
     [ "finalize", "classovermap__connection.html#a2027dbfa915d27ddfd1af138757067bb", null ],
     [ "has", "classovermap__connection.html#a262372f27fe1fd534851cdf7d0742f06", null ],

@@ -83,7 +83,6 @@ var iexamine_8cpp =
     [ "effect_disinfected", "iexamine_8cpp.html#adcc47d614ba63ddb056307153d5ac06c", null ],
     [ "effect_earphones", "iexamine_8cpp.html#ac9366c6b0a0c6068675bf92321130b46", null ],
     [ "effect_infected", "iexamine_8cpp.html#a1de43fa1f6d16ce87ab7a3a49e47c463", null ],
-    [ "effect_mending", "iexamine_8cpp.html#ae239a31e1ebbbbacd06a8fcdd8be2861", null ],
     [ "effect_pblue", "iexamine_8cpp.html#a34d6c775f0ffa1e39d670ea01615992c", null ],
     [ "effect_pkill2", "iexamine_8cpp.html#a1b1e7277edfa2ba4a473cd58b150bd92", null ],
     [ "effect_sleep", "iexamine_8cpp.html#ab16f8be4be2050986e76d2cb0cff7609", null ],

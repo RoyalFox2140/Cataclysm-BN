@@ -1,6 +1,5 @@
 var suffer_8cpp =
 [
-    [ "addiction_scaling", "suffer_8cpp.html#ada5a01cd92d233766c0eb00a58571c1b", null ],
     [ "flag_BLIND", "suffer_8cpp.html#a793e5f81d379bb1ed507e0b3ad166382", null ],
     [ "flag_PLOWABLE", "suffer_8cpp.html#aaa9613ea825773a0d74eaba7663a5dbf", null ],
     [ "flag_RAD_RESIST", "suffer_8cpp.html#a4e269d5100303d27c1fe13b7fb1b42d5", null ],
@@ -43,7 +42,6 @@ var suffer_8cpp =
     [ "effect_hallu", "suffer_8cpp.html#a33d14d146dbc0f416314bdb87d8fca77", null ],
     [ "effect_iodine", "suffer_8cpp.html#af5dd86266df53b8e4db96ed1853a4626", null ],
     [ "effect_masked_scent", "suffer_8cpp.html#a70ada8ba76f56302dff4828699ac43b9", null ],
-    [ "effect_mending", "suffer_8cpp.html#ae239a31e1ebbbbacd06a8fcdd8be2861", null ],
     [ "effect_meth", "suffer_8cpp.html#a5ba3e18250fa524fe8548fa0a1e98535", null ],
     [ "effect_narcosis", "suffer_8cpp.html#a1a6476e8888f0929f469fd9af2d629bc", null ],
     [ "effect_nausea", "suffer_8cpp.html#ac00dfe681a5a2f2b03bfe2ad27df1721", null ],
@@ -94,7 +92,6 @@ var suffer_8cpp =
     [ "trait_RADIOACTIVE2", "suffer_8cpp.html#a3e77af612857c3404dcf9dd196791dc6", null ],
     [ "trait_RADIOACTIVE3", "suffer_8cpp.html#a6268404a263d61925d8219716bc36be1", null ],
     [ "trait_RADIOGENIC", "suffer_8cpp.html#aed539cd1d527bf5d7c66b636415e90ed", null ],
-    [ "trait_REGEN_LIZ", "suffer_8cpp.html#aa3da8ff614f792fca48c877acc0ff880", null ],
     [ "trait_ROOTS3", "suffer_8cpp.html#af4ab011c7d44ca72f54db17f5b6c4ff4", null ],
     [ "trait_SCHIZOPHRENIC", "suffer_8cpp.html#af2d313b1132870a819487a4e4fd5e6c1", null ],
     [ "trait_SHARKTEETH", "suffer_8cpp.html#a16dc22cee5427c4ffbbe0db4dde27a5e", null ],

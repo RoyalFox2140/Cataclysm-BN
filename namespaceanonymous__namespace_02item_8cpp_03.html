@@ -85,15 +85,24 @@ $(document).ready(function(){initNavTree('namespaceanonymous__namespace_02item_8
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">anonymous_namespace{item.cpp} Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa5df3752ba211d1cd7875a0ebb378520"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02item_8cpp_03.html#aa5df3752ba211d1cd7875a0ebb378520">temperature_flag_to_highest_temperature</a> (<a class="el" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5d">temperature_flag</a> temperature) -&gt; <a class="el" href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">units::temperature</a></td></tr>
+<tr class="separator:aa5df3752ba211d1cd7875a0ebb378520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4344f62919abf9934b6abe5a7cffbe3e"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02item_8cpp_03.html#a4344f62919abf9934b6abe5a7cffbe3e">get_clothing_mod_val_key</a> (<a class="el" href="clothing__mod_8h.html#ab129387d97c2c7f0393c210d21df0152">clothing_mod_type</a> type)</td></tr>
 <tr class="separator:a4344f62919abf9934b6abe5a7cffbe3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:acbea1abc7fc89a159901508b9e505ed3"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02item_8cpp_03.html#acbea1abc7fc89a159901508b9e505ed3">rot_chart</a></td></tr>
+<tr class="memdesc:acbea1abc7fc89a159901508b9e505ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardcoded lookup table for food rots per hour calculation.  <a href="namespaceanonymous__namespace_02item_8cpp_03.html#acbea1abc7fc89a159901508b9e505ed3">More...</a><br /></td></tr>
+<tr class="separator:acbea1abc7fc89a159901508b9e505ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4344f62919abf9934b6abe5a7cffbe3e" name="a4344f62919abf9934b6abe5a7cffbe3e"></a>
@@ -112,19 +121,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l10175">10175</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l10176" name="l10176"></a><span class="lineno">10176</span>{</div>
-<div class="line"><a id="l10177" name="l10177"></a><span class="lineno">10177</span>    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">auto</span> cache = ( []() {</div>
-<div class="line"><a id="l10178" name="l10178"></a><span class="lineno">10178</span>        std::array&lt;std::string, <a class="code hl_variable" href="namespaceclothing__mods.html#aec1b637295ff2f661b88d4c77692e176">clothing_mods::all_clothing_mod_types</a>.size()&gt; res;</div>
-<div class="line"><a id="l10179" name="l10179"></a><span class="lineno">10179</span>        <span class="keywordflow">for</span>( <span class="keyword">const</span> <a class="code hl_enumeration" href="clothing__mod_8h.html#ab129387d97c2c7f0393c210d21df0152">clothing_mod_type</a> &amp;type : <a class="code hl_variable" href="namespaceclothing__mods.html#aec1b637295ff2f661b88d4c77692e176">clothing_mods::all_clothing_mod_types</a> ) {</div>
-<div class="line"><a id="l10180" name="l10180"></a><span class="lineno">10180</span>            res[type] = <a class="code hl_function" href="item_8cpp.html#aab0054280289e72ae8b8d9f062e20e47">CLOTHING_MOD_VAR_PREFIX</a></div>
-<div class="line"><a id="l10181" name="l10181"></a><span class="lineno">10181</span>                        + <a class="code hl_function" href="namespaceclothing__mods.html#a5bf63dd4b0368188aa71cfa230cfa989">clothing_mods::string_from_clothing_mod_type</a>( <a class="code hl_variable" href="namespaceclothing__mods.html#aec1b637295ff2f661b88d4c77692e176">clothing_mods::all_clothing_mod_types</a>[type] );</div>
-<div class="line"><a id="l10182" name="l10182"></a><span class="lineno">10182</span>        }</div>
-<div class="line"><a id="l10183" name="l10183"></a><span class="lineno">10183</span>        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l10184" name="l10184"></a><span class="lineno">10184</span>    } )();</div>
-<div class="line"><a id="l10185" name="l10185"></a><span class="lineno">10185</span> </div>
-<div class="line"><a id="l10186" name="l10186"></a><span class="lineno">10186</span>    <span class="keywordflow">return</span> cache[ <a class="code hl_enumeration" href="namespacedetail.html#ad46d232fb6116de4dac0c43dbde8e7a9">type</a> ];</div>
-<div class="line"><a id="l10187" name="l10187"></a><span class="lineno">10187</span>}</div>
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l10152">10152</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l10153" name="l10153"></a><span class="lineno">10153</span>{</div>
+<div class="line"><a id="l10154" name="l10154"></a><span class="lineno">10154</span>    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">auto</span> cache = ( []() {</div>
+<div class="line"><a id="l10155" name="l10155"></a><span class="lineno">10155</span>        std::array&lt;std::string, <a class="code hl_variable" href="namespaceclothing__mods.html#aec1b637295ff2f661b88d4c77692e176">clothing_mods::all_clothing_mod_types</a>.size()&gt; res;</div>
+<div class="line"><a id="l10156" name="l10156"></a><span class="lineno">10156</span>        <span class="keywordflow">for</span>( <span class="keyword">const</span> <a class="code hl_enumeration" href="clothing__mod_8h.html#ab129387d97c2c7f0393c210d21df0152">clothing_mod_type</a> &amp;type : <a class="code hl_variable" href="namespaceclothing__mods.html#aec1b637295ff2f661b88d4c77692e176">clothing_mods::all_clothing_mod_types</a> ) {</div>
+<div class="line"><a id="l10157" name="l10157"></a><span class="lineno">10157</span>            res[type] = <a class="code hl_function" href="item_8cpp.html#aab0054280289e72ae8b8d9f062e20e47">CLOTHING_MOD_VAR_PREFIX</a></div>
+<div class="line"><a id="l10158" name="l10158"></a><span class="lineno">10158</span>                        + <a class="code hl_function" href="namespaceclothing__mods.html#a5bf63dd4b0368188aa71cfa230cfa989">clothing_mods::string_from_clothing_mod_type</a>( <a class="code hl_variable" href="namespaceclothing__mods.html#aec1b637295ff2f661b88d4c77692e176">clothing_mods::all_clothing_mod_types</a>[type] );</div>
+<div class="line"><a id="l10159" name="l10159"></a><span class="lineno">10159</span>        }</div>
+<div class="line"><a id="l10160" name="l10160"></a><span class="lineno">10160</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l10161" name="l10161"></a><span class="lineno">10161</span>    } )();</div>
+<div class="line"><a id="l10162" name="l10162"></a><span class="lineno">10162</span> </div>
+<div class="line"><a id="l10163" name="l10163"></a><span class="lineno">10163</span>    <span class="keywordflow">return</span> cache[ <a class="code hl_enumeration" href="namespacedetail.html#ad46d232fb6116de4dac0c43dbde8e7a9">type</a> ];</div>
+<div class="line"><a id="l10164" name="l10164"></a><span class="lineno">10164</span>}</div>
 <div class="ttc" id="aclothing__mod_8h_html_ab129387d97c2c7f0393c210d21df0152"><div class="ttname"><a href="clothing__mod_8h.html#ab129387d97c2c7f0393c210d21df0152">clothing_mod_type</a></div><div class="ttdeci">clothing_mod_type</div><div class="ttdef"><b>Definition:</b> <a href="clothing__mod_8h_source.html#l00016">clothing_mod.h:16</a></div></div>
 <div class="ttc" id="aitem_8cpp_html_aab0054280289e72ae8b8d9f062e20e47"><div class="ttname"><a href="item_8cpp.html#aab0054280289e72ae8b8d9f062e20e47">CLOTHING_MOD_VAR_PREFIX</a></div><div class="ttdeci">static const std::string CLOTHING_MOD_VAR_PREFIX(&quot;clothing_mod_&quot;)</div></div>
 <div class="ttc" id="anamespaceclothing__mods_html_a5bf63dd4b0368188aa71cfa230cfa989"><div class="ttname"><a href="namespaceclothing__mods.html#a5bf63dd4b0368188aa71cfa230cfa989">clothing_mods::string_from_clothing_mod_type</a></div><div class="ttdeci">std::string string_from_clothing_mod_type(clothing_mod_type type)</div><div class="ttdef"><b>Definition:</b> <a href="clothing__mod_8cpp_source.html#l00168">clothing_mod.cpp:168</a></div></div>
@@ -133,7 +142,96 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="clothing__mod_8h_source.html#l00063">clothing_mods::all_clothing_mod_types</a>, <a class="el" href="item_8cpp.html#aab0054280289e72ae8b8d9f062e20e47">CLOTHING_MOD_VAR_PREFIX()</a>, <a class="el" href="clothing__mod_8cpp_source.html#l00168">clothing_mods::string_from_clothing_mod_type()</a>, and <a class="el" href="enums_8h.html#ac7c2392f800a8be2feb093ef5fe48d40a599dcce2998a6b40b1e38e8c6006cb0a">type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="item_8cpp_source.html#l10190">item::get_clothing_mod_val()</a>, and <a class="el" href="item_8cpp_source.html#l10195">item::update_clothing_mod_val()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="item_8cpp_source.html#l10167">item::get_clothing_mod_val()</a>, and <a class="el" href="item_8cpp_source.html#l10172">item::update_clothing_mod_val()</a>.</p>
+
+</div>
+</div>
+<a id="aa5df3752ba211d1cd7875a0ebb378520" name="aa5df3752ba211d1cd7875a0ebb378520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5df3752ba211d1cd7875a0ebb378520">&#9670;&nbsp;</a></span>temperature_flag_to_highest_temperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto anonymous_namespace{item.cpp}::temperature_flag_to_highest_temperature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5d">temperature_flag</a>&#160;</td>
+          <td class="paramname"><em>temperature</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">units::temperature</a>
+</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l05690">5690</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l05691" name="l05691"></a><span class="lineno"> 5691</span>{</div>
+<div class="line"><a id="l05692" name="l05692"></a><span class="lineno"> 5692</span>    <span class="keywordflow">switch</span>( <a class="code hl_typedef" href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">temperature</a> ) {</div>
+<div class="line"><a id="l05693" name="l05693"></a><span class="lineno"> 5693</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da97a8a8356c8e6ec71bc071918368ab20">temperature_flag::TEMP_NORMAL</a>:</div>
+<div class="line"><a id="l05694" name="l05694"></a><span class="lineno"> 5694</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da6d106a78eac33e56fc089873c46de0dd">temperature_flag::TEMP_HEATER</a>:</div>
+<div class="line"><a id="l05695" name="l05695"></a><span class="lineno"> 5695</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceunits.html#a8c82e57c3b1d1f78315ca925b2eafdb6">units::temperature_max</a>;</div>
+<div class="line"><a id="l05696" name="l05696"></a><span class="lineno"> 5696</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5dad2e703e320bca1fe9991716791e958fb">temperature_flag::TEMP_FRIDGE</a>:</div>
+<div class="line"><a id="l05697" name="l05697"></a><span class="lineno"> 5697</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacetemperatures.html#a6ac4b0413305dd75769d62227081d8b1">temperatures::fridge</a>;</div>
+<div class="line"><a id="l05698" name="l05698"></a><span class="lineno"> 5698</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5daab79f10607e00f5f2377eaefe8c09a9a">temperature_flag::TEMP_FREEZER</a>:</div>
+<div class="line"><a id="l05699" name="l05699"></a><span class="lineno"> 5699</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacetemperatures.html#ab5323589e14984e5c09cafa3b62def7d">temperatures::freezer</a>;</div>
+<div class="line"><a id="l05700" name="l05700"></a><span class="lineno"> 5700</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da485a07b934a4c717af6dd180aadcb207">temperature_flag::TEMP_ROOT_CELLAR</a>:</div>
+<div class="line"><a id="l05701" name="l05701"></a><span class="lineno"> 5701</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacetemperatures.html#aed7454d776862538b76d7fef4965394d">temperatures::root_cellar</a>;</div>
+<div class="line"><a id="l05702" name="l05702"></a><span class="lineno"> 5702</span>    }</div>
+<div class="line"><a id="l05703" name="l05703"></a><span class="lineno"> 5703</span> </div>
+<div class="line"><a id="l05704" name="l05704"></a><span class="lineno"> 5704</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceunits.html#a8c82e57c3b1d1f78315ca925b2eafdb6">units::temperature_max</a>;</div>
+<div class="line"><a id="l05705" name="l05705"></a><span class="lineno"> 5705</span>}</div>
+<div class="ttc" id="aenums_8h_html_a5f18231241dd5fb662d1c5313636ec5da485a07b934a4c717af6dd180aadcb207"><div class="ttname"><a href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da485a07b934a4c717af6dd180aadcb207">temperature_flag::TEMP_ROOT_CELLAR</a></div><div class="ttdeci">@ TEMP_ROOT_CELLAR</div></div>
+<div class="ttc" id="aenums_8h_html_a5f18231241dd5fb662d1c5313636ec5da6d106a78eac33e56fc089873c46de0dd"><div class="ttname"><a href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da6d106a78eac33e56fc089873c46de0dd">temperature_flag::TEMP_HEATER</a></div><div class="ttdeci">@ TEMP_HEATER</div></div>
+<div class="ttc" id="aenums_8h_html_a5f18231241dd5fb662d1c5313636ec5da97a8a8356c8e6ec71bc071918368ab20"><div class="ttname"><a href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da97a8a8356c8e6ec71bc071918368ab20">temperature_flag::TEMP_NORMAL</a></div><div class="ttdeci">@ TEMP_NORMAL</div></div>
+<div class="ttc" id="aenums_8h_html_a5f18231241dd5fb662d1c5313636ec5daab79f10607e00f5f2377eaefe8c09a9a"><div class="ttname"><a href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5daab79f10607e00f5f2377eaefe8c09a9a">temperature_flag::TEMP_FREEZER</a></div><div class="ttdeci">@ TEMP_FREEZER</div></div>
+<div class="ttc" id="aenums_8h_html_a5f18231241dd5fb662d1c5313636ec5dad2e703e320bca1fe9991716791e958fb"><div class="ttname"><a href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5dad2e703e320bca1fe9991716791e958fb">temperature_flag::TEMP_FRIDGE</a></div><div class="ttdeci">@ TEMP_FRIDGE</div></div>
+<div class="ttc" id="anamespacetemperatures_html_a6ac4b0413305dd75769d62227081d8b1"><div class="ttname"><a href="namespacetemperatures.html#a6ac4b0413305dd75769d62227081d8b1">temperatures::fridge</a></div><div class="ttdeci">constexpr units::temperature fridge</div><div class="ttdef"><b>Definition:</b> <a href="game__constants_8h_source.html#l00092">game_constants.h:92</a></div></div>
+<div class="ttc" id="anamespacetemperatures_html_ab5323589e14984e5c09cafa3b62def7d"><div class="ttname"><a href="namespacetemperatures.html#ab5323589e14984e5c09cafa3b62def7d">temperatures::freezer</a></div><div class="ttdeci">constexpr units::temperature freezer</div><div class="ttdef"><b>Definition:</b> <a href="game__constants_8h_source.html#l00098">game_constants.h:98</a></div></div>
+<div class="ttc" id="anamespacetemperatures_html_aed7454d776862538b76d7fef4965394d"><div class="ttname"><a href="namespacetemperatures.html#aed7454d776862538b76d7fef4965394d">temperatures::root_cellar</a></div><div class="ttdeci">constexpr units::temperature root_cellar</div><div class="ttdef"><b>Definition:</b> <a href="game__constants_8h_source.html#l00104">game_constants.h:104</a></div></div>
+<div class="ttc" id="anamespaceunits_html_a458531725a9f70ed821e8067cfaf3a0d"><div class="ttname"><a href="namespaceunits.html#a458531725a9f70ed821e8067cfaf3a0d">units::temperature</a></div><div class="ttdeci">quantity&lt; int, temperature_in_millidegree_celsius_tag &gt; temperature</div><div class="ttdef"><b>Definition:</b> <a href="units__temperature_8h_source.html#l00061">units_temperature.h:61</a></div></div>
+<div class="ttc" id="anamespaceunits_html_a8c82e57c3b1d1f78315ca925b2eafdb6"><div class="ttname"><a href="namespaceunits.html#a8c82e57c3b1d1f78315ca925b2eafdb6">units::temperature_max</a></div><div class="ttdeci">const temperature temperature_max</div><div class="ttdef"><b>Definition:</b> <a href="units__temperature_8h_source.html#l00074">units_temperature.h:74</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="game__constants_8h_source.html#l00098">temperatures::freezer</a>, <a class="el" href="game__constants_8h_source.html#l00092">temperatures::fridge</a>, <a class="el" href="game__constants_8h_source.html#l00104">temperatures::root_cellar</a>, <a class="el" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5daab79f10607e00f5f2377eaefe8c09a9a">TEMP_FREEZER</a>, <a class="el" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5dad2e703e320bca1fe9991716791e958fb">TEMP_FRIDGE</a>, <a class="el" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da6d106a78eac33e56fc089873c46de0dd">TEMP_HEATER</a>, <a class="el" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da97a8a8356c8e6ec71bc071918368ab20">TEMP_NORMAL</a>, <a class="el" href="enums_8h.html#a5f18231241dd5fb662d1c5313636ec5da485a07b934a4c717af6dd180aadcb207">TEMP_ROOT_CELLAR</a>, and <a class="el" href="units__temperature_8h_source.html#l00074">units::temperature_max</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="item_8cpp_source.html#l05710">item::minimum_freshness_duration()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="acbea1abc7fc89a159901508b9e505ed3" name="acbea1abc7fc89a159901508b9e505ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbea1abc7fc89a159901508b9e505ed3">&#9670;&nbsp;</a></span>rot_chart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto anonymous_namespace{item.cpp}::rot_chart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= std::array&lt;int, 44&gt;</div>
+<div class="line">{</div>
+<div class="line">    0, 372, 744, 1118, 1219, 1273, 1388, 1514, 1651, 1800,</div>
+<div class="line">    1880, 2050, 2235, 2438, 2658, 2776, 3027, 3301, 3600, 3926,</div>
+<div class="line">    4100, 4471, 4875, 5317, 5798, 6054, 6602, 7200, 7852, 8562,</div>
+<div class="line">    8941, 9751, 10633, 11595, 12645, 13205, 14400, 15703, 17125, 18674,</div>
+<div class="line">    19501,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Hardcoded lookup table for food rots per hour calculation. </p>
+<p >IRL this tends to double every 10c a few degrees above freezing, but past a certain point the rate decreases until even extremophiles find it too hot. Here we just stop further acceleration at 40C.</p>
+<p >Original formula: </p><dl class="section see"><dt>See also</dt><dd><a href="https://github.com/cataclysmbnteam/Cataclysm-BN/blob/033901af4b52ad0bfcfd6abfe06bca4e403d44b1/src/item.cpp#L5612-L5640">https://github.com/cataclysmbnteam/Cataclysm-BN/blob/033901af4b52ad0bfcfd6abfe06bca4e403d44b1/src/item.cpp#L5612-L5640</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l05627">5627</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="item_8cpp_source.html#l05642">get_hourly_rotpoints_at_temp()</a>.</p>
 
 </div>
 </div>
@@ -143,7 +241,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02item_8cpp_03.html">anonymous_namespace{item.cpp}</a></li>
-    <li class="footer">Generated on Thu Sep 21 2023 00:11:35 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 22:59:15 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

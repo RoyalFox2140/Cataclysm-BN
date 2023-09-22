@@ -75,7 +75,7 @@ var classitem =
     [ "brewing_time", "classitem.html#a1c4782661219fccd444ab8d91ec04d58", null ],
     [ "bullet_resist", "classitem.html#ac6e793a2b6ba3b3c91e1d10962c25a51", null ],
     [ "burn", "classitem.html#ab3a0a8aac3fe6347f06e4606b30e36d7", null ],
-    [ "calc_rot", "classitem.html#a33d7e797dc7119f8255e770638544cf9", null ],
+    [ "calc_rot", "classitem.html#a1cc966809ba7b595ec17204dcb17f92d", null ],
     [ "can_contain", "classitem.html#af731711530a7d869e07bfb9cb4f380d8", null ],
     [ "can_contain", "classitem.html#a754699dc5d14f040334c5e442914c024", null ],
     [ "can_holster", "classitem.html#a76165a9e0121b48e5df59d0fcabc1728", null ],

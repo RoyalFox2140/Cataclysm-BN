@@ -1,12 +1,5 @@
 var NAVTREEINDEX99 =
 {
-"line_8cpp.html#a0e0927f95ba9200b418d74aeff48f7a3":[37,0,1,360,8],
-"line_8cpp.html#a10ff7fb33381e8938b0bb524b6aa5850":[37,0,1,360,7],
-"line_8cpp.html#a19634ed59e09da9312d6fa110a38539c":[37,0,1,360,10],
-"line_8cpp.html#a1a892ef073bda14e92be0d545d2e406b":[37,0,1,360,27],
-"line_8cpp.html#a1cd8ba343b3d636459366cbf8cc81ab6":[37,0,1,360,2],
-"line_8cpp.html#a22f984836636053038f43340f9c50149":[37,0,1,360,5],
-"line_8cpp.html#a2d906c9af0b0586f48bc34cff0838817":[37,0,1,360,24],
 "line_8cpp.html#a6444e80137e060b38b07184baf565228":[37,0,1,360,12],
 "line_8cpp.html#a68aee13ee53226c1c42c603ea43ec4c5":[37,0,1,360,26],
 "line_8cpp.html#a6cc384479d3f9a4f7379192d827dc516":[37,0,1,360,9],
@@ -249,5 +242,12 @@ var NAVTREEINDEX99 =
 "magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a279a9ad2f903cb3c0e4939b5a2e784b8":[37,0,1,372,2,34],
 "magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a335c75c5f9b974aed057bff2c6551d36":[37,0,1,372,2,7],
 "magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a3963049b60ddd6534b219d3767af0dfc":[37,0,1,372,2,0],
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a53d26b3f55e6c8e102f2a536a72e2be9":[37,0,1,372,2,25]
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a53d26b3f55e6c8e102f2a536a72e2be9":[37,0,1,372,2,25],
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a5468922f935ac08eca22bbc8bef8901e":[37,0,1,372,2,20],
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a6217a3784475193ccd831b45c59cb4b6":[37,0,1,372,2,22],
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a6598c3f28c88ffbbff1de8268a8a6af1":[37,0,1,372,2,37],
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a65a59338b99aee6a451e86b17b462b5a":[37,0,1,372,2,4],
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a66212c9f367544fe9bffff62900c6203":[37,0,1,372,2,1],
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a71bafdba9dd037cc19f246e9f7995cc9":[37,0,1,372,2,14],
+"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a7301a4f338e31867e8ef6d3f0a148319":[37,0,1,372,2,2]
 };

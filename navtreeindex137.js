@@ -1,12 +1,5 @@
 var NAVTREEINDEX137 =
 {
-"string__utils_8h.html#a696604c359cc62926273a71cb7be4ce8":[37,0,1,639,15],
-"string__utils_8h.html#a6a08b78c3ecd66a019d4c7669c546646":[37,0,1,639,4],
-"string__utils_8h.html#a6da33ffe40cf01a24fbd75d557db58a4":[37,0,1,639,6],
-"string__utils_8h.html#a6eae1bc4c64699fac35cbcd99625727e":[37,0,1,639,7],
-"string__utils_8h.html#a78f0928723504ed91d542c9090cd244d":[37,0,1,639,19],
-"string__utils_8h.html#a801218a57ea2bc3a601afb05046827ab":[37,0,1,639,24],
-"string__utils_8h.html#a813ac4bd0ac2745dfe41d13adf98996f":[37,0,1,639,10],
 "string__utils_8h.html#a836373abd77ef65988abf2bcbff6929a":[37,0,1,639,14],
 "string__utils_8h.html#a973155e8fe854d3b3c1c2a310a906f86":[37,0,1,639,1],
 "string__utils_8h.html#a9b07e15c0eef8f333353df967108a5b2":[37,0,1,639,11],
@@ -176,8 +169,8 @@ var NAVTREEINDEX137 =
 "structactive__tiles_1_1furn__transform.html#a0fb640b8ceb16d47e9850260a7f3ca0c":[35,0,0,0,0],
 "structactive__tiles_1_1furn__transform.html#a3f0665429ac03736a48c6f82e7a8b62e":[35,0,0,0,2],
 "structactive__tiles_1_1furn__transform.html#a3f0665429ac03736a48c6f82e7a8b62e":[36,0,0,0,2],
-"structactive__tiles_1_1furn__transform.html#aaa534fbfe06ed7b2196ab426e291c3c7":[35,0,0,0,3],
 "structactive__tiles_1_1furn__transform.html#aaa534fbfe06ed7b2196ab426e291c3c7":[36,0,0,0,3],
+"structactive__tiles_1_1furn__transform.html#aaa534fbfe06ed7b2196ab426e291c3c7":[35,0,0,0,3],
 "structactive__tiles_1_1furn__transform.html#ac4251a14dfd3ef0931ec53aa24aac4bb":[36,0,0,0,1],
 "structactive__tiles_1_1furn__transform.html#ac4251a14dfd3ef0931ec53aa24aac4bb":[35,0,0,0,1],
 "structactivity__reason__info.html":[36,0,56],
@@ -249,5 +242,12 @@ var NAVTREEINDEX137 =
 "structammo__effect.html#ad0570b8430aeb1da76f2e03ea3dfc877":[36,0,71,4],
 "structammo__effect.html#ae129baea3fa136e1bee1fd3e52f9abbd":[36,0,71,23],
 "structammo__effect.html#ae1b673802fa8e5ff0f54961e3e009fe8":[36,0,71,7],
-"structammo__effect.html#aea6af8e496e5b4a685acd7c57bf1cf3b":[36,0,71,20]
+"structammo__effect.html#aea6af8e496e5b4a685acd7c57bf1cf3b":[36,0,71,20],
+"structammo__effect.html#aebb5a07338a39aa4312cf035a148e273":[36,0,71,21],
+"structanonymous__namespace_02armor__layers_8cpp_03_1_1item__penalties.html":[36,0,2,0],
+"structanonymous__namespace_02armor__layers_8cpp_03_1_1item__penalties.html":[35,0,11,0],
+"structanonymous__namespace_02armor__layers_8cpp_03_1_1item__penalties.html#a58c78612fc3713ef690224e25653b44c":[36,0,2,0,0],
+"structanonymous__namespace_02armor__layers_8cpp_03_1_1item__penalties.html#a58c78612fc3713ef690224e25653b44c":[35,0,11,0,0],
+"structanonymous__namespace_02armor__layers_8cpp_03_1_1item__penalties.html#a91b8d2b7660363c5fc9342a7f523acfc":[35,0,11,0,2],
+"structanonymous__namespace_02armor__layers_8cpp_03_1_1item__penalties.html#a91b8d2b7660363c5fc9342a7f523acfc":[36,0,2,0,2]
 };

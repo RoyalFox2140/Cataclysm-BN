@@ -1,12 +1,5 @@
 var NAVTREEINDEX160 =
 {
-"structreal__coords.html#a1cc2ca8217ac9d9468836d042519539c":[36,0,787,5],
-"structreal__coords.html#a2701f85d2e9270cc7ca744df96c5fa25":[36,0,787,15],
-"structreal__coords.html#a42f118d56c761077b2ea001543b27b57":[36,0,787,2],
-"structreal__coords.html#a47c3cc80457915fff4fc730d7d05707e":[36,0,787,10],
-"structreal__coords.html#a4f4016bc45de0a0d0ac1f0cbe4c924fc":[36,0,787,6],
-"structreal__coords.html#a4f4f90d5295ad48343e2c98372187218":[36,0,787,11],
-"structreal__coords.html#a57901c0966a396c63436b915d01853da":[36,0,787,9],
 "structreal__coords.html#a62221f6d25f3b28c48370f6e96a6e2e3":[36,0,787,0],
 "structreal__coords.html#a7b2748671239a0eaf995a891608e1d0a":[36,0,787,16],
 "structreal__coords.html#a7cff5ef6100518fd3d858fd9563f75a8":[36,0,787,8],
@@ -249,5 +242,12 @@ var NAVTREEINDEX160 =
 "structspecial__attack.html#a731e461645bb900be061d5e007de8723":[36,0,865,0],
 "structspecial__game.html":[36,0,866],
 "structspecial__game.html#a0e5f31acb8aba2cab1fa8f257068f22f":[36,0,866,2],
-"structspecial__game.html#a2febfae6530cda3acc72b21a46d4c551":[36,0,866,3]
+"structspecial__game.html#a2febfae6530cda3acc72b21a46d4c551":[36,0,866,3],
+"structspecial__game.html#a3136fdad68f271d5b8f79c09a67264c4":[36,0,866,0],
+"structspecial__game.html#a341696d91c842c0a21d5537aa1ee8f6b":[36,0,866,5],
+"structspecial__game.html#a45ce3dd832108ae40082b25899c232b4":[36,0,866,1],
+"structspecial__game.html#ad12ccb10dc508916d1e37da2e698e1e1":[36,0,866,6],
+"structspecial__game.html#af0c04bd0dcb11813b61432ffc26e9007":[36,0,866,4],
+"structspecies__type.html":[36,0,867],
+"structspecies__type.html#a05d088f3e5b8f28c27d4bca519ad83c9":[36,0,867,4]
 };

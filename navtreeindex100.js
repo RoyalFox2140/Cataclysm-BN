@@ -1,12 +1,5 @@
 var NAVTREEINDEX100 =
 {
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a5468922f935ac08eca22bbc8bef8901e":[37,0,1,372,2,20],
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a6217a3784475193ccd831b45c59cb4b6":[37,0,1,372,2,22],
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a6598c3f28c88ffbbff1de8268a8a6af1":[37,0,1,372,2,37],
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a65a59338b99aee6a451e86b17b462b5a":[37,0,1,372,2,4],
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a66212c9f367544fe9bffff62900c6203":[37,0,1,372,2,1],
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a71bafdba9dd037cc19f246e9f7995cc9":[37,0,1,372,2,14],
-"magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a7301a4f338e31867e8ef6d3f0a148319":[37,0,1,372,2,2],
 "magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a79e971fc6cf7a641ef0988d5542c91a1":[37,0,1,372,2,33],
 "magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a7cd20b68c70e507cf83076bf03fd0a3e":[37,0,1,372,2,9],
 "magic__enchantment_8h.html#acd6a6ebb27f9ecb82b3bce1d3aef2998a85bd19be307ddfa19ab5e5b3db189e58":[37,0,1,372,2,28],
@@ -249,5 +242,12 @@ var NAVTREEINDEX100 =
 "map__extras_8cpp.html#aa13d315315cbda6ed53e68cbf8080dcf":[37,0,1,385,34],
 "map__extras_8cpp.html#aa5684538e06ca62438cd7920fc56102f":[37,0,1,385,110],
 "map__extras_8cpp.html#aa7c3d1cc09284425affb9130ea9ed4a0":[37,0,1,385,27],
-"map__extras_8cpp.html#aac381941ec2d1e00ca333fc39c373833":[37,0,1,385,2]
+"map__extras_8cpp.html#aac381941ec2d1e00ca333fc39c373833":[37,0,1,385,2],
+"map__extras_8cpp.html#aae1131a695ae356dc5befc7301600410":[37,0,1,385,4],
+"map__extras_8cpp.html#aae3710b4f72fcb2c70d0606aba650488":[37,0,1,385,82],
+"map__extras_8cpp.html#ab14619927425f7ada4a5601aeac7ad76":[37,0,1,385,39],
+"map__extras_8cpp.html#ab1ffd65b5286d1af2a3bcfdf9a19cbdd":[37,0,1,385,47],
+"map__extras_8cpp.html#ab3b65f825b905ebc2128cd5458d1e366":[37,0,1,385,122],
+"map__extras_8cpp.html#ab7e0d7d20930e27006d45db491864b0d":[37,0,1,385,132],
+"map__extras_8cpp.html#ab95d97ed8a44c318326937f8869e9359":[37,0,1,385,61]
 };

@@ -12,6 +12,7 @@ var units__temperature_8h =
     [ "from_fahrenheit", "units__temperature_8h.html#ad595e601b3873fbd720be5536dbce49c", null ],
     [ "from_millidegree_celsius", "units__temperature_8h.html#a6284f22e2666c440ba0cc51c0c98dc61", null ],
     [ "kelvin_to_fahrenheit", "units__temperature_8h.html#aafa6509532dd203763054dd7d72b38da", null ],
+    [ "operator\"\"_c", "units__temperature_8h.html#a1d8001314f231c36010144b84ab404e1", null ],
     [ "operator\"\"_c", "units__temperature_8h.html#acdd80a8c9fd2cf0001a3242e6cc223e3", null ],
     [ "operator\"\"_f", "units__temperature_8h.html#aeb85a88f145d3dbe26d1818b528612b9", null ],
     [ "operator\"\"_mc", "units__temperature_8h.html#ad411ed31e83404311ef27bdcb7e31260", null ],

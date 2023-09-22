@@ -21,7 +21,6 @@ var npc_8cpp =
     [ "effect_drunk", "npc_8cpp.html#a0b49aa7d4b07c448f7546ba24fb6b233", null ],
     [ "effect_feral_killed_recently", "npc_8cpp.html#ad40d0488713b6d2a14b3501b978493c9", null ],
     [ "effect_infection", "npc_8cpp.html#aa252b893cc9c6b44632f8dffa16e261c", null ],
-    [ "effect_mending", "npc_8cpp.html#ae239a31e1ebbbbacd06a8fcdd8be2861", null ],
     [ "effect_npc_flee_player", "npc_8cpp.html#afdcaa355e9fb31990b6222e12cc0416a", null ],
     [ "effect_npc_suspend", "npc_8cpp.html#a74abddcaf98d4f59d99c051a421bee67", null ],
     [ "effect_pkill1", "npc_8cpp.html#ade9a69adcc390f6f15d6f90ca8350a21", null ],

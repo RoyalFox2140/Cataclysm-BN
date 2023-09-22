@@ -1,12 +1,5 @@
 var NAVTREEINDEX154 =
 {
-"structmaptile.html#a5c9e3d51ccd6ac8307ed526a0a3c48fb":[36,0,607,3],
-"structmaptile.html#a725cb032f26e95e06984be10ab9fe7b8":[36,0,607,0],
-"structmaptile.html#a8716413c361496ec5d8cd4f2260a58a7":[36,0,607,11],
-"structmaptile.html#a938297885d93f2c7d4f283363ca2f606":[36,0,607,1],
-"structmaptile.html#a93e125b91c77b00f653a12800b24dbc9":[36,0,607,18],
-"structmaptile.html#a977cfc47c0271e9c593158e8df9e8ad4":[36,0,607,7],
-"structmaptile.html#a9c9e15a1b6db4e935fc1230519e45249":[36,0,607,6],
 "structmaptile.html#a9ea19f651f4ce0a70d044fac9caf6f90":[36,0,607,9],
 "structmaptile.html#ab61517185726936287df087b2bfed289":[36,0,607,16],
 "structmaptile.html#ac457d93598440f370cb86702caddfdd7":[36,0,607,4],
@@ -249,5 +242,12 @@ var NAVTREEINDEX154 =
 "structmongroup__bin__eq.html":[36,0,650],
 "structmongroup__bin__eq.html#adfd4bb909ee20980fb136e595fab4e78":[36,0,650,0],
 "structmongroup__hash.html":[36,0,651],
-"structmongroup__hash.html#ad34b7aa0d22028f46699c4f41fe445e4":[36,0,651,0]
+"structmongroup__hash.html#ad34b7aa0d22028f46699c4f41fe445e4":[36,0,651,0],
+"structmonostate.html":[36,0,652],
+"structmonster__adjustment.html":[36,0,654],
+"structmonster__adjustment.html#a11d548e2dec633475349101ffa12ec4f":[36,0,654,4],
+"structmonster__adjustment.html#a3f813ea61f0dd55b93f78b0b4aa30a69":[36,0,654,3],
+"structmonster__adjustment.html#a4241ea9ad5b2cb6f08fd942a05139583":[36,0,654,2],
+"structmonster__adjustment.html#a48dbf44df27f538ef356a0d33f2ee3aa":[36,0,654,1],
+"structmonster__adjustment.html#a5c99817bc38c267eab9d534acf847d8f":[36,0,654,6]
 };

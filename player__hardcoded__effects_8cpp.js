@@ -45,7 +45,6 @@ var player__hardcoded__effects_8cpp =
     [ "effect_hot", "player__hardcoded__effects_8cpp.html#a4c80f98459b07d9175c344914b1525dd", null ],
     [ "effect_infected", "player__hardcoded__effects_8cpp.html#a1de43fa1f6d16ce87ab7a3a49e47c463", null ],
     [ "effect_lying_down", "player__hardcoded__effects_8cpp.html#ac95fd54d69ea350ea463a719fa7f3550", null ],
-    [ "effect_mending", "player__hardcoded__effects_8cpp.html#ae239a31e1ebbbbacd06a8fcdd8be2861", null ],
     [ "effect_mutating", "player__hardcoded__effects_8cpp.html#acb4dcd18ad3748e50f9585c9b575be5e", null ],
     [ "effect_narcosis", "player__hardcoded__effects_8cpp.html#a1a6476e8888f0929f469fd9af2d629bc", null ],
     [ "effect_nausea", "player__hardcoded__effects_8cpp.html#ac00dfe681a5a2f2b03bfe2ad27df1721", null ],

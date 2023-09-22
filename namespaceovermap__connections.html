@@ -121,10 +121,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00147">147</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>{</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.check();</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>}</div>
+<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00153">153</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>{</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.check();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
 <div class="ttc" id="anamespaceanonymous__namespace_02overmap__connection_8cpp_03_html_ab686a19e4fe3405d5136e3a451f35d9a"><div class="ttname"><a href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">anonymous_namespace{overmap_connection.cpp}::connections</a></div><div class="ttdeci">generic_factory&lt; overmap_connection &gt; connections(&quot;overmap connection&quot;)</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">anonymous_namespace{overmap_connection.cpp}::connections</a>.</p>
@@ -148,17 +148,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00139">139</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>{</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.finalize();</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">for</span>( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;elem : <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.get_all() ) {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="classovermap__connection.html">overmap_connection</a> &amp;<span class="keyword">&gt;</span>( elem ).<a class="code hl_function" href="namespaceovermap__connections.html#a42c4f1f50efcfaca2bf3e432c16476a6">finalize</a>(); <span class="comment">// This cast is ugly, but safe.</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00145">145</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.finalize();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">for</span>( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;elem : <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.get_all() ) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="classovermap__connection.html">overmap_connection</a> &amp;<span class="keyword">&gt;</span>( elem ).<a class="code hl_function" href="namespaceovermap__connections.html#a42c4f1f50efcfaca2bf3e432c16476a6">finalize</a>(); <span class="comment">// This cast is ugly, but safe.</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
 <div class="ttc" id="aclassovermap__connection_html"><div class="ttname"><a href="classovermap__connection.html">overmap_connection</a></div><div class="ttdef"><b>Definition:</b> <a href="overmap__connection_8h_source.html#l00017">overmap_connection.h:18</a></div></div>
-<div class="ttc" id="anamespaceovermap__connections_html_a42c4f1f50efcfaca2bf3e432c16476a6"><div class="ttname"><a href="namespaceovermap__connections.html#a42c4f1f50efcfaca2bf3e432c16476a6">overmap_connections::finalize</a></div><div class="ttdeci">void finalize()</div><div class="ttdef"><b>Definition:</b> <a href="overmap__connection_8cpp_source.html#l00139">overmap_connection.cpp:139</a></div></div>
+<div class="ttc" id="anamespaceovermap__connections_html_a42c4f1f50efcfaca2bf3e432c16476a6"><div class="ttname"><a href="namespaceovermap__connections.html#a42c4f1f50efcfaca2bf3e432c16476a6">overmap_connections::finalize</a></div><div class="ttdeci">void finalize()</div><div class="ttdef"><b>Definition:</b> <a href="overmap__connection_8cpp_source.html#l00145">overmap_connection.cpp:145</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">anonymous_namespace{overmap_connection.cpp}::connections</a>, and <a class="el" href="overmap__connection_8cpp_source.html#l00126">overmap_connection::finalize()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">anonymous_namespace{overmap_connection.cpp}::connections</a>, and <a class="el" href="overmap__connection_8cpp_source.html#l00132">overmap_connection::finalize()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="init_8cpp_source.html#l00640">DynamicDataLoader::finalize_loaded_data()</a>.</p>
 
@@ -180,16 +180,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00157">157</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>{</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a> = <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.get_all();</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">const</span> <span class="keyword">auto</span> iter = std::find_if( <a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a>.cbegin(),</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a>.cend(), [&amp;oter]( <span class="keyword">const</span> <a class="code hl_class" href="classovermap__connection.html">overmap_connection</a> &amp; elem ) {</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        return elem.pick_subtype_for( oter ) != nullptr;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    } );</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">return</span> iter != <a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a>.cend() ? iter-&gt;id : <a class="code hl_function" href="classstring__id.html#ae29dd8ed38d2b5eb443a65ad46f10b2d">overmap_connection_id::NULL_ID</a>();</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>}</div>
+<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00163">163</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>{</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a> = <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.get_all();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keyword">const</span> <span class="keyword">auto</span> iter = std::find_if( <a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a>.cbegin(),</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a>.cend(), [&amp;oter]( <span class="keyword">const</span> <a class="code hl_class" href="classovermap__connection.html">overmap_connection</a> &amp; elem ) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        return elem.pick_subtype_for( oter ) != nullptr;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    } );</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> iter != <a class="code hl_variable" href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">all</a>.cend() ? iter-&gt;id : <a class="code hl_function" href="classstring__id.html#ae29dd8ed38d2b5eb443a65ad46f10b2d">overmap_connection_id::NULL_ID</a>();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
 <div class="ttc" id="aclassstring__id_html_ae29dd8ed38d2b5eb443a65ad46f10b2d"><div class="ttname"><a href="classstring__id.html#ae29dd8ed38d2b5eb443a65ad46f10b2d">string_id&lt; overmap_connection &gt;::NULL_ID</a></div><div class="ttdeci">static const string_id&lt; overmap_connection &gt; &amp; NULL_ID()</div><div class="ttdoc">Returns a null id whose string_id&lt;T&gt;::is_null() must always return true.</div></div>
 <div class="ttc" id="anamespaceom__direction_html_a27cad92b0d05637eb934f1a7f3424e41"><div class="ttname"><a href="namespaceom__direction.html#a27cad92b0d05637eb934f1a7f3424e41">om_direction::all</a></div><div class="ttdeci">const std::array&lt; type, 4 &gt; all</div><div class="ttdoc">For the purposes of iteration.</div><div class="ttdef"><b>Definition:</b> <a href="om__direction_8h_source.html#l00027">om_direction.h:27</a></div></div>
 </div><!-- fragment -->
@@ -215,15 +215,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00168">168</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>{</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceovermap__connections.html#a1b075a87209845b9905895a3a9697e52">guess_for</a>( oter-&gt;get_first() );</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>}</div>
-<div class="ttc" id="anamespaceovermap__connections_html_a1b075a87209845b9905895a3a9697e52"><div class="ttname"><a href="namespaceovermap__connections.html#a1b075a87209845b9905895a3a9697e52">overmap_connections::guess_for</a></div><div class="ttdeci">overmap_connection_id guess_for(const oter_type_id &amp;oter)</div><div class="ttdef"><b>Definition:</b> <a href="overmap__connection_8cpp_source.html#l00168">overmap_connection.cpp:168</a></div></div>
+<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00174">174</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceovermap__connections.html#a1b075a87209845b9905895a3a9697e52">guess_for</a>( oter-&gt;get_first() );</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+<div class="ttc" id="anamespaceovermap__connections_html_a1b075a87209845b9905895a3a9697e52"><div class="ttname"><a href="namespaceovermap__connections.html#a1b075a87209845b9905895a3a9697e52">overmap_connections::guess_for</a></div><div class="ttdeci">overmap_connection_id guess_for(const oter_type_id &amp;oter)</div><div class="ttdef"><b>Definition:</b> <a href="overmap__connection_8cpp_source.html#l00174">overmap_connection.cpp:174</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="overmap__connection_8cpp_source.html#l00168">guess_for()</a>.</p>
+<p class="reference">References <a class="el" href="overmap__connection_8cpp_source.html#l00174">guess_for()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="overmap__connection_8cpp_source.html#l00168">guess_for()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="overmap__connection_8cpp_source.html#l00174">guess_for()</a>.</p>
 
 </div>
 </div>
@@ -253,10 +253,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00134">134</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.load( jo, src );</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00140">140</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>{</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.load( jo, src );</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">anonymous_namespace{overmap_connection.cpp}::connections</a>.</p>
 
@@ -279,10 +279,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00152">152</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>{</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.reset();</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+<p class="definition">Definition at line <a class="el" href="overmap__connection_8cpp_source.html#l00158">158</a> of file <a class="el" href="overmap__connection_8cpp_source.html">overmap_connection.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>{</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_variable" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">connections</a>.reset();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespaceanonymous__namespace_02overmap__connection_8cpp_03.html#ab686a19e4fe3405d5136e3a451f35d9a">anonymous_namespace{overmap_connection.cpp}::connections</a>.</p>
 
@@ -296,7 +296,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceovermap__connections.html">overmap_connections</a></li>
-    <li class="footer">Generated on Thu Sep 21 2023 00:11:45 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 22:59:21 for Cataclysm BN by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>
