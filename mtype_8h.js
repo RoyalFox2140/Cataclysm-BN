@@ -47,6 +47,7 @@ var mtype_8h =
       [ "MF_SLUDGEPROOF", "mtype_8h.html#afa4c966d04d2ddb261a7cde725eca842a8f3acb810268f88df5738a0bffd7fb94", null ],
       [ "MF_SLUDGETRAIL", "mtype_8h.html#afa4c966d04d2ddb261a7cde725eca842a30424a8f36fe406e1b665f19c0bf2f31", null ],
       [ "MF_COLDPROOF", "mtype_8h.html#afa4c966d04d2ddb261a7cde725eca842acdb5660f13a8eb6ac3a2528e2e1b8ff2", null ],
+      [ "MF_BIOPROOF", "mtype_8h.html#afa4c966d04d2ddb261a7cde725eca842af942602457227bb7aa1fadbded645d8e", null ],
       [ "MF_FIREY", "mtype_8h.html#afa4c966d04d2ddb261a7cde725eca842a25c8b8c05cc048947f1593ce74755ae2", null ],
       [ "MF_QUEEN", "mtype_8h.html#afa4c966d04d2ddb261a7cde725eca842a38327b1e6178aa474714c9ae4e842834", null ],
       [ "MF_ELECTRONIC", "mtype_8h.html#afa4c966d04d2ddb261a7cde725eca842ab2f11b921b9bcafe2af1ddea398ffb4f", null ],
