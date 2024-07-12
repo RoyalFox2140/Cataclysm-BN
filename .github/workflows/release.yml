@@ -288,7 +288,7 @@ jobs:
       - name: Build CBN (windows)
         if: matrix.mxe != 'none'
         env:
-          PLATFORM: /opt/mxe/usr/bin/${{ matrix.mxe }}-w64-mingw32.static.gcc12-
+          PLATFORM: /opt/mxe/usr/bin/${{ matrix.mxe }}-w64-mingw32.static.gcc11-
         run: |
           make -j$((`nproc`+0)) CROSS="${PLATFORM}" TILES=1 SOUND=1 LUA=1 RELEASE=1 LANGUAGES=all PCH=0 bindist
           mv cataclysmbn-unstable.zip cbn-${{ matrix.artifact }}-${{ needs.metadata.outputs.tag_name }}.zip
