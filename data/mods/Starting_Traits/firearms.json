@@ -1,0 +1,17 @@
+[
+  {
+    "type": "mutation",
+    "id": "start_",
+    "name": { "str": "Start:" },
+    "points": 0,
+    "starting_trait": true,
+    "valid": false,
+    "player_display": false,
+    "description": "You start the game with ."
+  },
+  {
+    "type": "profession_item_substitutions",
+    "item": "",
+    "bonus": { "present": [ "start_" ] }
+  }
+]

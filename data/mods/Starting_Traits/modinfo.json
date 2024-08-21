@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "Starting_Traits",
+    "name": "Starting Traits",
+    "authors": [ "RoyalFox" ],
+    "maintainers": [ "RoyalFox" ],
+    "description": "Start with items using the traits system.",
+    "category": "content",
+    "dependencies": [ "bn" ]
+  }
+]
